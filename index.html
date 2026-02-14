@@ -18,115 +18,205 @@
     <meta property="og:type" content="website">
 
     <style>
-<style>
-    /* --- CONFIGURAZIONE TEMI (SISTEMA VARIABILI) --- */
-    :root {
-        --bg-color: #f2e8cf; 
-        --btn-bg: #ffffff; 
-        --btn-text: #8b5a2b; 
-        --text-color: #4a3728; 
-        --grid-border: #8e8e93; 
-        --black-cell: #1c1c1e;
-        --primary-bg: #8b5a2b;    /* Sfondo pulsante NUOVO */
-        --primary-txt: #ffffff;   /* Testo pulsante NUOVO */
-        --timer-color: #8b5a2b;
-    }
+/* --- CONFIGURAZIONE LOGICA TEMI iOS --- */
+:root {
+    --ios-radius: 14px;
+    --ios-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+    /* Default Papiro */
+    --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --grid-border: #8e8e93; --black-cell: #1c1c1e; --primary-txt: #ffffff; --timer-color: #8b5a2b;
+}
 
-    /* Temi Standard (Chiari) */
-    body.theme-papiro  { --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --black-cell: #1c1c1e; --primary-bg: #8b5a2b; --primary-txt: #ffffff; --timer-color: #8b5a2b; }
-    body.theme-moderno { --bg-color: #f2f2f7; --btn-bg: #ffffff; --btn-text: #007aff; --text-color: #1c1c1e; --black-cell: #3a3a3c; --primary-bg: #007aff; --primary-txt: #ffffff; --timer-color: #007aff; }
-    body.theme-olivo   { --bg-color: #e8f5e9; --btn-bg: #ffffff; --btn-text: #2e7d32; --text-color: #1b5e20; --black-cell: #2e3d2e; --primary-bg: #2e7d32; --primary-txt: #ffffff; --timer-color: #2e7d32; }
-    body.theme-notte   { --bg-color: #1c1c1e; --btn-bg: #2c2c2e; --btn-text: #0a84ff; --text-color: #ffffff; --black-cell: #000000; --primary-bg: #0a84ff; --primary-txt: #ffffff; --timer-color: #0a84ff; }
+/* Temi Chiari Standard */
+body.theme-papiro  { --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --black-cell: #1c1c1e; --primary-txt: #ffffff; --timer-color: #8b5a2b; --grid-border: rgba(0,0,0,0.1); }
+body.theme-moderno { --bg-color: #f2f2f7; --btn-bg: #ffffff; --btn-text: #007aff; --text-color: #1c1c1e; --black-cell: #3a3a3c; --primary-txt: #ffffff; --timer-color: #007aff; --grid-border: #c6c6c8; }
+body.theme-olivo   { --bg-color: #e8f5e9; --btn-bg: #ffffff; --btn-text: #2e7d32; --text-color: #1b5e20; --black-cell: #2e3d2e; --primary-txt: #ffffff; --timer-color: #2e7d32; --grid-border: rgba(0,0,0,0.1); }
+body.theme-notte   { --bg-color: #000000; --btn-bg: #1c1c1e; --btn-text: #0a84ff; --text-color: #ffffff; --black-cell: #38383a; --primary-txt: #ffffff; --timer-color: #0a84ff; --grid-border: #38383a; }
 
-    /* Temi Scuri (Contrasto Invertito per Pulsante Primario) */
-    body.theme-foresta { --bg-color: #1b5e20; --btn-bg: #2e7d32; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #0a2e0a; --primary-bg: #ffffff; --primary-txt: #1b5e20; --timer-color: #ffffff; }
-    body.theme-oceano  { --bg-color: #003366; --btn-bg: #00509d; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #001a33; --primary-bg: #ffffff; --primary-txt: #003366; --timer-color: #ffffff; }
-    body.theme-vino    { --bg-color: #4a0404; --btn-bg: #800000; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #2a0000; --primary-bg: #ffffff; --primary-txt: #4a0404; --timer-color: #ffffff; }
+/* Temi Scuri */
+body.theme-foresta { --bg-color: #1b5e20; --btn-bg: #2e7d32; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #0a2e0a; --primary-txt: #1b5e20; --timer-color: #ffffff; --grid-border: rgba(255,255,255,0.1); }
+body.theme-oceano  { --bg-color: #003366; --btn-bg: #00509d; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #001a33; --primary-txt: #003366; --timer-color: #ffffff; --grid-border: rgba(255,255,255,0.1); }
+body.theme-vino    { --bg-color: #4a0404; --btn-bg: #800000; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #2a0000; --primary-txt: #4a0404; --timer-color: #ffffff; --grid-border: rgba(255,255,255,0.1); }
+body.theme-porpora { --bg-color: #f3e5f5; --btn-bg: #ffffff; --btn-text: #7b1fa2; --text-color: #4a148c; --black-cell: #2c003e; --primary-txt: #ffffff; --timer-color: #7b1fa2; --grid-border: rgba(0,0,0,0.1); }
 
-    /* Tema Porpora */
-    body.theme-porpora { --bg-color: #f3e5f5; --btn-bg: #ffffff; --btn-text: #7b1fa2; --text-color: #4a148c; --black-cell: #2c003e; --primary-bg: #7b1fa2; --primary-txt: #ffffff; --timer-color: #7b1fa2; }
+/* --- STRUTTURA GENERALE --- */
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-    /* --- LAYOUT STYLE (iOS AESTHETIC) --- */
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--ios-font);
+    margin: 0; padding: 0; 
+    height: 100vh; width: 100vw;
+    display: flex; flex-direction: column;
+    align-items: center; /* CENTRA IL CONTENUTO ORIZZONTALMENTE */
+    transition: background 0.3s ease;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+}
 
-    body {
-        background-color: var(--bg-color); color: var(--text-color);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        margin: 0; padding: 0; height: 100vh; width: 100vw;
-        display: flex; flex-direction: column; align-items: center; transition: background 0.4s ease;
-        overflow: hidden;
-    }
+/* Header centrato */
+header {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid var(--grid-border);
+    text-align: center;
+    z-index: 100;
+}
 
-    header { flex-shrink: 0; padding: 10px 0; text-align: center; width: 100%; z-index: 10; }
-    h1 { font-weight: 800; font-size: 1.5rem; margin: 0; letter-spacing: -0.5px; }
-    #header-timer { font-size: 1.2rem; font-weight: 700; margin-left: 8px; color: var(--timer-color) !important; font-variant-numeric: tabular-nums; }
-    .subtitle { font-size: 0.75rem; opacity: 0.6; margin-top: 2px; }
+h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 
-    #game-area { display: none; flex-grow: 1; width: 100%; padding: 10px; overflow: hidden; position: relative; }
+#header-timer {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--timer-color) !important;
+}
 
-    /* Mobile Portrait */
-    @media (orientation: portrait) {
-        #game-area { flex-direction: column; align-items: center; gap: 15px; }
-        .game-column-left { width: 100%; max-width: 95vw; flex-shrink: 0; }
-        .grid-wrapper { width: 100%; aspect-ratio: 1/1; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-radius: 8px; overflow: hidden; } 
-        .game-column-center { width: 100%; flex-grow: 1; overflow-y: auto; padding: 0 5px 30px 5px; }
-        .game-nav.portrait-only { display: flex; width: 100%; gap: 8px; margin-top: 10px; justify-content: center; }
-    }
+.subtitle {
+    font-size: 11px;
+    opacity: 0.6;
+    margin-top: 4px;
+    width: 100%;
+    text-align: center;
+}
 
-    /* Landscape */
-    @media (orientation: landscape) {
-        #game-area { flex-direction: row; justify-content: center; align-items: flex-start; padding: 10px 20px; gap: 20px; }
-        .game-column-left { height: 90%; aspect-ratio: 1/1; flex-shrink: 0; }
-        .grid-wrapper { height: 100%; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
-        .game-column-center { flex-grow: 1; height: 100%; overflow-y: auto; max-width: 500px; }
-        .game-column-right { width: 100px; display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
-        .game-nav.portrait-only { display: none; }
-        .game-nav.landscape-only { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-    }
+/* Game Area centrata */
+#game-area { 
+    display: none; 
+    flex-grow: 1; 
+    width: 100%; 
+    max-width: 1000px; /* Evita che si allarghi troppo su desktop */
+    padding: 10px; 
+    overflow: hidden; 
+    justify-content: center;
+}
 
-    /* Griglia */
-    .grid-container {
-        display: grid; grid-template-columns: repeat(11, 1fr); grid-template-rows: repeat(11, 1fr);
-        gap: 1px; background-color: var(--grid-border); border: 1.5px solid var(--grid-border);
-        width: 100%; height: 100%;
-    }
-    
-    .cell { position: relative; background-color: #ffffff; width: 100%; height: 100%; }
-    .cell.black { background-color: var(--black-cell) !important; }
-    .cell span { position: absolute; top: 3%; left: 4%; font-size: clamp(8px, 1.3vmin, 12px); font-weight: 700; color: #666; z-index: 2; }
-    .cell input {
-        width: 100%; height: 100%; border: none; background: transparent;
-        text-align: center; font-size: clamp(16px, 4.5vmin, 28px); font-weight: 700;
-        text-transform: uppercase; outline: none; color: #000; padding: 0;
-    }
-    .cell input:focus { background-color: rgba(0, 122, 255, 0.1); }
+@media (orientation: portrait) {
+    #game-area { flex-direction: column; align-items: center; gap: 10px; }
+    .game-column-left { width: 100%; max-width: 90vw; }
+    .game-column-center { width: 100%; flex-grow: 1; overflow-y: auto; }
+}
 
-    /* Pulsanti stile iOS */
-    button {
-        background: var(--btn-bg); color: var(--btn-text);
-        border: none; padding: 12px; border-radius: 12px;
-        font-size: 14px; font-weight: 600; cursor: pointer;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.2s ease;
-        -webkit-appearance: none;
-    }
-    button:active { transform: scale(0.96); opacity: 0.8; }
-    button.primary { background: var(--primary-bg) !important; color: var(--primary-txt) !important; }
-    button.danger { color: #ff3b30; }
+@media (orientation: landscape) {
+    #game-area { flex-direction: row; align-items: flex-start; gap: 20px; }
+    .game-column-left { height: 90%; aspect-ratio: 1/1; }
+    .game-column-center { flex-grow: 1; height: 95%; overflow-y: auto; }
+}
 
-    #home-screen.menu { display: flex; flex-direction: column; gap: 12px; width: 300px; margin-top: 50px; }
-    #home-screen button { padding: 20px; font-size: 17px; border-radius: 14px; }
+/* Griglia */
+.grid-wrapper {
+    width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: center;
+}
 
-    /* Definizione Indizi */
-    #clues-container { padding: 15px; background: rgba(255,255,255,0.05); border-radius: 14px; border: 1px solid rgba(0,0,0,0.1); }
-    .clue-section h3 { margin: 15px 0 8px 0; font-size: 1rem; font-weight: 800; border-bottom: 1px solid var(--grid-border); padding-bottom: 6px; position: sticky; top: 0; background: var(--bg-color); }
-    .clue-item { font-size: 0.95rem; margin-bottom: 8px; line-height: 1.3; }
+.grid-container {
+    display: grid; 
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    gap: 1px; 
+    background-color: var(--grid-border);
+    border: 1px solid var(--grid-border);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%; aspect-ratio: 1/1;
+}
 
-    /* Pannello Temi */
-    #theme-panel { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--btn-bg); padding: 25px; border-radius: 24px; z-index: 1000; width: 320px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-    #overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); z-index:999; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-    .theme-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.cell { position: relative; background-color: #ffffff; }
+.cell.black { background-color: var(--black-cell) !important; }
 
+.cell input {
+    width: 100%; height: 100%; border: none; background: transparent;
+    text-align: center; font-size: 24px; font-weight: 700;
+    text-transform: uppercase; outline: none; 
+    color: #000;
+}
+
+/* Pulsanti */
+button {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--ios-radius);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+button:active { transform: scale(0.96); opacity: 0.8; }
+
+button.primary {
+    background-color: var(--btn-text) !important;
+    color: var(--primary-txt) !important;
+}
+
+/* Menu Home perfettamente centrato */
+#home-screen.menu { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+    width: 100%;
+    max-width: 280px; 
+    margin: auto; /* Centra verticalmente e orizzontalmente */
+}
+
+#home-screen button { width: 100%; padding: 18px; }
+
+/* Indizi */
+.clue-item { 
+    background: var(--btn-bg);
+    padding: 12px 16px; 
+    margin-bottom: 5px;
+    font-size: 15px; 
+    border-radius: 10px;
+    border: 0.5px solid rgba(0,0,0,0.05);
+}
+
+.clue-section h3 {
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Pannello Temi centrato */
+#theme-panel { 
+    display: none; position: fixed; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    background: var(--btn-bg); 
+    padding: 25px; border-radius: 28px; 
+    z-index: 1000; width: 85%; max-width: 320px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+#overlay { 
+    display: none; position: fixed; 
+    top:0; left:0; width:100%; height:100%; 
+    background: rgba(0,0,0,0.4); 
+    z-index:999; backdrop-filter: blur(8px); 
+}
+
+.game-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 </style>
+
 </head>
 <body class="theme-papiro">
 
