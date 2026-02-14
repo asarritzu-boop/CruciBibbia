@@ -130,76 +130,107 @@ body.theme-porpora { --bg-color: #f3e5f5; --btn-bg: #7b1fa2; --btn-text: #ffffff
 body {
     background-color: var(--bg-color); color: var(--text-color);
     font-family: -apple-system, system-ui, sans-serif;
-    margin: 0; padding: 0; height: 100vh; width: 100vw;
-    display: flex; flex-direction: column; align-items: center; transition: background 0.3s;
-    overflow: hidden;
-}
+        /* --- CONFIGURAZIONE DEFINITIVA TEMI --- */
+        :root {
+            --bg-color: #f2e8cf; 
+            --btn-bg: #ffffff; 
+            --btn-text: #8b5a2b; 
+            --text-color: #4a3728; 
+            --grid-border: #8e8e93; 
+            --black-cell: #1c1c1e;
+            --primary-bg: #8b5a2b;    /* Colore sfondo pulsante Nuovo */
+            --primary-txt: #ffffff;   /* Colore testo pulsante Nuovo */
+            --timer-color: #8b5a2b;
+        }
 
-header { flex-shrink: 0; padding: 5px 0; text-align: center; width: 100%; z-index: 10; }
-h1 { font-weight: 800; font-size: 1.4rem; margin: 0; }
-#header-timer { font-size: 1.1rem; font-weight: bold; margin-left: 10px; color: var(--timer-color) !important; }
-.subtitle { font-size: 0.7rem; opacity: 0.7; }
+        /* Temi Chiari Standard */
+        body.theme-papiro  { --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --black-cell: #1c1c1e; --primary-bg: #8b5a2b; --primary-txt: #ffffff; --timer-color: #8b5a2b; }
+        body.theme-moderno { --bg-color: #f2f2f7; --btn-bg: #ffffff; --btn-text: #007aff; --text-color: #1c1c1e; --black-cell: #3a3a3c; --primary-bg: #007aff; --primary-txt: #ffffff; --timer-color: #007aff; }
+        body.theme-olivo   { --bg-color: #e8f5e9; --btn-bg: #ffffff; --btn-text: #2e7d32; --text-color: #1b5e20; --black-cell: #2e3d2e; --primary-bg: #2e7d32; --primary-txt: #ffffff; --timer-color: #2e7d32; }
+        body.theme-notte   { --bg-color: #1c1c1e; --btn-bg: #2c2c2e; --btn-text: #0a84ff; --text-color: #ffffff; --black-cell: #000000; --primary-bg: #0a84ff; --primary-txt: #ffffff; --timer-color: #0a84ff; }
 
-#game-area { display: none; flex-grow: 1; width: 100%; padding: 5px; overflow: hidden; position: relative; }
+        /* Temi Scuri: Pulsante primario BIANCO per contrasto */
+        body.theme-foresta { --bg-color: #1b5e20; --btn-bg: #2e7d32; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #0a2e0a; --primary-bg: #ffffff; --primary-txt: #1b5e20; --timer-color: #ffffff; }
+        body.theme-oceano  { --bg-color: #003366; --btn-bg: #00509d; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #001a33; --primary-bg: #ffffff; --primary-txt: #003366; --timer-color: #ffffff; }
+        body.theme-vino    { --bg-color: #4a0404; --btn-bg: #800000; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #2a0000; --primary-bg: #ffffff; --primary-txt: #4a0404; --timer-color: #ffffff; }
 
-@media (orientation: portrait) {
-    #game-area { flex-direction: column; align-items: center; gap: 10px; }
-    .game-column-left { width: 100%; max-width: 95vw; flex-shrink: 0; }
-    .grid-wrapper { width: 100%; aspect-ratio: 1/1; } 
-    .game-column-center { width: 100%; flex-grow: 1; overflow-y: auto; padding: 0 10px 20px 10px; }
-    .game-column-right { display: none; }
-    .game-nav.portrait-only { display: flex; width: 100%; gap: 5px; margin: 5px 0; justify-content: center; }
-}
+        /* Tema Porpora: Pulsante primario VIOLA SCURO su fondo chiaro */
+        body.theme-porpora { --bg-color: #f3e5f5; --btn-bg: #ffffff; --btn-text: #7b1fa2; --text-color: #4a148c; --black-cell: #2c003e; --primary-bg: #7b1fa2; --primary-txt: #ffffff; --timer-color: #7b1fa2; }
 
-@media (orientation: landscape) {
-    #game-area { flex-direction: row; justify-content: center; align-items: flex-start; padding: 0 10px 5px 10px; gap: 15px; }
-    .game-column-left { height: 100%; aspect-ratio: 1/1; flex-shrink: 0; }
-    .grid-wrapper { height: 100%; width: 100%; }
-    .game-column-center { flex-grow: 1; height: 100%; overflow-y: auto; min-width: 150px; }
-    .game-column-right { width: 85px; display: flex; flex-direction: column; gap: 8px; padding-top: 10px; flex-shrink: 0; }
-    .game-nav.portrait-only { display: none; }
-    .game-nav.landscape-only { display: flex; flex-direction: column; gap: 8px; width: 100%; }
-    .game-nav.landscape-only button { padding: 10px 2px; font-size: 11px; }
-}
+        /* --- STILE GRAFICO (LAYOUT E COMPONENTI) --- */
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-.grid-container {
-    display: grid; 
-    grid-template-columns: repeat(11, 1fr);
-    grid-template-rows: repeat(11, 1fr);
-    gap: 1px; background-color: var(--grid-border);
-    border: 2px solid var(--grid-border);
-    width: 100%; height: 100%;
-}
+        body {
+            background-color: var(--bg-color); color: var(--text-color);
+            font-family: -apple-system, system-ui, sans-serif;
+            margin: 0; padding: 0; height: 100vh; width: 100vw;
+            display: flex; flex-direction: column; align-items: center; transition: background 0.3s;
+            overflow: hidden;
+        }
 
-.cell { position: relative; background-color: #ffffff; width: 100%; height: 100%; }
-.cell.black { background-color: var(--black-cell) !important; }
-.cell span { position: absolute; top: 2%; left: 3%; font-size: clamp(7px, 1.2vmin, 11px); font-weight: 800; color: #444; z-index: 2; pointer-events: none; }
-.cell input {
-    width: 100%; height: 100%; border: none; background: transparent;
-    text-align: center; font-size: clamp(14px, 4vmin, 26px); font-weight: bold;
-    text-transform: uppercase; outline: none; color: #000; padding: 0; margin: 0;
-}
-.cell input:focus { background-color: rgba(255, 255, 0, 0.2); }
+        header { flex-shrink: 0; padding: 5px 0; text-align: center; width: 100%; z-index: 10; }
+        h1 { font-weight: 800; font-size: 1.4rem; margin: 0; }
+        #header-timer { font-size: 1.1rem; font-weight: bold; margin-left: 10px; color: var(--timer-color) !important; }
+        .subtitle { font-size: 0.7rem; opacity: 0.7; }
 
-button {
-    background: var(--btn-bg); color: var(--btn-text);
-    border: none; padding: 10px; border-radius: 8px;
-    font-size: 13px; font-weight: 700; cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15); transition: 0.1s;
-}
-button.primary { background: var(--btn-text) !important; color: var(--primary-txt) !important; }
-button.danger { color: #d32f2f; }
+        #game-area { display: none; flex-grow: 1; width: 100%; padding: 5px; overflow: hidden; position: relative; }
 
-#home-screen.menu { display: flex; flex-direction: column; gap: 15px; width: 280px; margin-top: 40px; }
-#home-screen button { padding: 18px; font-size: 16px; }
+        @media (orientation: portrait) {
+            #game-area { flex-direction: column; align-items: center; gap: 10px; }
+            .game-column-left { width: 100%; max-width: 95vw; flex-shrink: 0; }
+            .grid-wrapper { width: 100%; aspect-ratio: 1/1; } 
+            .game-column-center { width: 100%; flex-grow: 1; overflow-y: auto; padding: 0 10px 20px 10px; }
+            .game-column-right { display: none; }
+            .game-nav.portrait-only { display: flex; width: 100%; gap: 5px; margin: 5px 0; justify-content: center; }
+        }
 
-#clues-container { padding: 10px; background: rgba(255,255,255,0.1); border-radius: 12px; border: 1px solid var(--grid-border); height: 100%; overflow-y: auto; }
-.clue-section h3 { margin: 10px 0 5px 0; font-size: 0.95rem; border-bottom: 2px solid var(--grid-border); padding-bottom: 4px; position: sticky; top: 0; background: var(--bg-color); }
-.clue-item { font-size: 0.9rem; margin-bottom: 6px; }
+        @media (orientation: landscape) {
+            #game-area { flex-direction: row; justify-content: center; align-items: flex-start; padding: 0 10px 5px 10px; gap: 15px; }
+            .game-column-left { height: 100%; aspect-ratio: 1/1; flex-shrink: 0; }
+            .grid-wrapper { height: 100%; width: 100%; }
+            .game-column-center { flex-grow: 1; height: 100%; overflow-y: auto; min-width: 150px; }
+            .game-column-right { width: 85px; display: flex; flex-direction: column; gap: 8px; padding-top: 10px; flex-shrink: 0; }
+            .game-nav.portrait-only { display: none; }
+            .game-nav.landscape-only { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+            .game-nav.landscape-only button { padding: 10px 2px; font-size: 11px; }
+        }
 
-#theme-panel { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--btn-bg); padding: 20px; border-radius: 16px; z-index: 1000; width: 300px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-#overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:999; backdrop-filter: blur(2px); }
-.theme-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .grid-container {
+            display: grid; grid-template-columns: repeat(11, 1fr); grid-template-rows: repeat(11, 1fr);
+            gap: 1px; background-color: var(--grid-border); border: 2px solid var(--grid-border);
+            width: 100%; height: 100%;
+        }
+        
+        .cell { position: relative; background-color: #ffffff; width: 100%; height: 100%; }
+        .cell.black { background-color: var(--black-cell) !important; }
+        .cell span { position: absolute; top: 2%; left: 3%; font-size: clamp(7px, 1.2vmin, 11px); font-weight: 800; color: #444; z-index: 2; pointer-events: none; }
+        .cell input {
+            width: 100%; height: 100%; border: none; background: transparent;
+            text-align: center; font-size: clamp(14px, 4vmin, 26px); font-weight: bold;
+            text-transform: uppercase; outline: none; color: #000; padding: 0; margin: 0;
+        }
+        .cell input:focus { background-color: rgba(255, 255, 0, 0.2); }
+
+        button {
+            background: var(--btn-bg); color: var(--btn-text);
+            border: none; padding: 10px; border-radius: 8px;
+            font-size: 13px; font-weight: 700; cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15); transition: 0.1s;
+        }
+        button.primary { background: var(--primary-bg) !important; color: var(--primary-txt) !important; }
+        button.danger { color: #d32f2f; }
+
+        #home-screen.menu { display: flex; flex-direction: column; gap: 15px; width: 280px; margin-top: 40px; }
+        #home-screen button { padding: 18px; font-size: 16px; }
+
+        #clues-container { padding: 10px; background: rgba(255,255,255,0.1); border-radius: 12px; border: 1px solid var(--grid-border); height: 100%; overflow-y: auto; }
+        .clue-section h3 { margin: 10px 0 5px 0; font-size: 0.95rem; border-bottom: 2px solid var(--grid-border); padding-bottom: 4px; position: sticky; top: 0; background: var(--bg-color); }
+        .clue-item { font-size: 0.9rem; margin-bottom: 6px; }
+
+        #theme-panel { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--btn-bg); padding: 20px; border-radius: 16px; z-index: 1000; width: 300px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        #overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:999; backdrop-filter: blur(2px); }
+        .theme-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
 </style>
 </head>
 <body class="theme-papiro">
