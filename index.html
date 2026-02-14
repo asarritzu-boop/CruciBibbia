@@ -46,7 +46,6 @@
             text-align: center; z-index: 100;
         }
         body.in-game header { display: block; }
-
         #header-timer { font-size: 19px; font-weight: 700; color: var(--timer-color) !important; }
 
         /* Schermata Home */
@@ -58,10 +57,9 @@
         .home-header h1 { font-size: 34px; font-weight: 850; letter-spacing: -1.2px; margin: 0; }
         .home-header .subtitle { font-size: 12px; opacity: 0.6; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
         body.in-game .home-header { display: none; }
-
         #home-screen.menu { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 90%; max-width: 280px; }
 
-        /* AREA GIOCO DINAMICA */
+        /* AREA GIOCO */
         #game-area { display: none; flex-grow: 1; width: 100%; overflow: hidden; }
 
         /* Griglia */
@@ -81,7 +79,7 @@
         button.primary { background-color: var(--btn-text) !important; color: var(--primary-txt) !important; }
         .danger { color: #ff3b30; }
 
-        /* Pannello Temi */
+        /* Temi e Overlay */
         #theme-panel { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--btn-bg); padding: 20px; border-radius: 28px; z-index: 1000; width: 85%; max-width: 320px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
         .theme-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; width: 100%; }
         .theme-grid button { aspect-ratio: 1 / 0.8; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 14px; border-radius: 18px; background: rgba(120, 120, 128, 0.1); }
@@ -94,19 +92,19 @@
 
         /* --- LAYOUT VERTICALE (Portrait) --- */
         @media (orientation: portrait) {
-            #game-area { flex-direction: column; align-items: center; overflow-y: auto; padding: 10px; }
-            .game-column-left { width: 100%; max-width: 400px; }
-            .game-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 15px 0; width: 100%; }
-            .game-nav button { flex: 1; min-width: 80px; padding: 10px; font-size: 14px; }
-            .game-column-center { width: 100%; }
+            #game-area { flex-direction: column; align-items: center; padding: 10px; }
+            .game-column-left { width: 100%; max-width: 400px; flex-shrink: 0; }
+            .game-nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 10px 0; width: 100%; flex-shrink: 0; }
+            .game-nav button { flex: 1; min-width: 75px; padding: 10px; font-size: 13px; }
+            .game-column-center { width: 100%; flex-grow: 1; overflow-y: auto; border-top: 0.5px solid var(--grid-border); }
         }
 
         /* --- LAYOUT ORIZZONTALE (Landscape) --- */
         @media (orientation: landscape) {
             #game-area { flex-direction: row; padding: 10px; gap: 15px; }
-            .game-column-left { height: 100%; aspect-ratio: 1/1; display: flex; align-items: center; }
+            .game-column-left { height: 100%; aspect-ratio: 1/1; display: flex; align-items: center; flex-shrink: 0; }
             .game-column-center { flex-grow: 1; height: 100%; overflow-y: auto; padding-right: 10px; }
-            .game-column-right { width: 120px; display: flex; flex-direction: column; gap: 8px; }
+            .game-column-right { width: 120px; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; }
             .game-column-right button { width: 100%; padding: 10px; font-size: 13px; }
             .portrait-only { display: none; }
         }
@@ -263,8 +261,8 @@
             else alert("Copia link: " + window.location.href);
         }
 
-        function confermaReset() { if(confirm("Resettare?")) document.querySelectorAll('.cell input').forEach(i => i.value = ''); }
-        function tornaHome() { if(confirm("Uscire?")) location.reload(); }
+        function confermaReset() { if(confirm("Resettare lettere?")) document.querySelectorAll('.cell input').forEach(i => i.value = ''); }
+        function tornaHome() { if(confirm("Uscire e tornare alla home?")) location.reload(); }
         function startTimer() { clearInterval(timerInterval); timerInterval = setInterval(() => { seconds++; aggiornaTimer(); }, 1000); }
         function aggiornaTimer() {
             let m = Math.floor(seconds/60).toString().padStart(2,'0'), s = (seconds%60).toString().padStart(2,'0');
