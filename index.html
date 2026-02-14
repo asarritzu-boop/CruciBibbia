@@ -213,15 +213,27 @@
             ]
         };
 
-        function avviaCruciverba() {
-            giocoAttivo = true;
-            document.getElementById('home-screen').style.display = 'none';
-            document.getElementById('game-area').style.display = 'flex';
-            costruisciGriglia(schema);
-            mostraIndicazioni(schema);
-            resetTimer();
-            startTimer();
-        }
+        // Il database sarà un array di oggetti chiamato 'DATABASE_SCHEMI'
+let giocoAttivo = false;
+let schemaCorrente = null;
+
+function avviaCruciverba() {
+    giocoAttivo = true;
+    document.getElementById('home-screen').style.display = 'none';
+    document.getElementById('game-area').style.display = 'flex';
+    
+    // PESCA RANDOM
+    const indiceRandom = Math.floor(Math.random() * DATABASE_SCHEMI.length);
+    schemaCorrente = DATABASE_SCHEMI[indiceRandom];
+    
+    costruisciGriglia(schemaCorrente);
+    mostraIndicazioni(schemaCorrente);
+    resetTimer();
+    startTimer();
+}
+
+// Modifica anche le funzioni costruisciGriglia e mostraIndicazioni 
+// affinché usino 'schemaCorrente' invece della variabile fissa 'schema'.
 
         function gestisciNuovoGioco() {
             if (giocoAttivo && !confirm("Vuoi iniziare un nuovo schema?")) return;
