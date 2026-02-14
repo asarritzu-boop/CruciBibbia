@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CRUCI-BIBBIA</title>
+    <meta id="theme-meta" name="theme-color" content="#f2e8cf">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="icona-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icona-512.png">
+    <link rel="apple-touch-icon" href="icona-192.png">
+    <link rel="manifest" href="manifest.json">
+
+    <meta property="og:title" content="CRUCI-BIBBIA">
+    <meta property="og:description" content="Risolvi cruciverba biblici interattivi!">
+    <meta property="og:image" content="https://asarritzu-boop.github.io/CruciBibbia/icona-512.png">
+    <meta property="og:url" content="https://asarritzu-boop.github.io/CruciBibbia/">
+    <meta property="og:type" content="website">
+
+  <style>
+/* --- CONFIGURAZIONE LOGICA TEMI iOS --- */
+:root {
+    --ios-radius: 14px;
+    --ios-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+    /* Default Papiro */
+    --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --grid-border: #8e8e93; --black-cell: #1c1c1e; --primary-txt: #ffffff; --timer-color: #8b5a2b;
+}
+
+/* Classi Temi */
+body.theme-papiro  { --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --black-cell: #1c1c1e; --primary-txt: #ffffff; --timer-color: #8b5a2b; --grid-border: rgba(0,0,0,0.1); }
+body.theme-moderno { --bg-color: #f2f2f7; --btn-bg: #ffffff; --btn-text: #007aff; --text-color: #1c1c1e; --black-cell: #3a3a3c; --primary-txt: #ffffff; --timer-color: #007aff; --grid-border: #c6c6c8; }
+body.theme-olivo   { --bg-color: #e8f5e9; --btn-bg: #ffffff; --btn-text: #2e7d32; --text-color: #1b5e20; --black-cell: #2e3d2e; --primary-txt: #ffffff; --timer-color: #2e7d32; --grid-border: rgba(0,0,0,0.1); }
+body.theme-notte   { --bg-color: #000000; --btn-bg: #1c1c1e; --btn-text: #0a84ff; --text-color: #ffffff; --black-cell: #38383a; --primary-txt: #ffffff; --timer-color: #0a84ff; --grid-border: #38383a; }
+body.theme-foresta { --bg-color: #1b5e20; --btn-bg: #2e7d32; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #0a2e0a; --primary-txt: #1b5e20; --timer-color: #ffffff; --grid-border: rgba(255,255,255,0.1); }
+body.theme-oceano  { --bg-color: #003366; --btn-bg: #00509d; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #001a33; --primary-txt: #003366; --timer-color: #ffffff; --grid-border: rgba(255,255,255,0.1); }
+body.theme-vino    { --bg-color: #4a0404; --btn-bg: #800000; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #2a0000; --primary-txt: #4a0404; --timer-color: #ffffff; --grid-border: rgba(255,255,255,0.1); }
+body.theme-porpora { --bg-color: #f3e5f5; --btn-bg: #ffffff; --btn-text: #7b1fa2; --text-color: #4a148c; --black-cell: #2c003e; --primary-txt: #ffffff; --timer-color: #7b1fa2; --grid-border: rgba(0,0,0,0.1); }
+
+/* --- STRUTTURA BASE --- */
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--ios-font);
+    margin: 0; padding: 0;
+    height: 100vh; width: 100vw;
+    display: flex; flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.3s ease;
+}
+
+/* Header Compatto */
+header {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 0.5px solid var(--grid-border);
+    text-align: center;
+    z-index: 100;
+}
+
+h1 {
+    font-size: 20px; font-weight: 800; letter-spacing: -0.5px;
+    margin: 0; display: inline-flex; align-items: center; gap: 8px;
+}
+
+#header-timer { font-size: 18px; font-weight: 600; color: var(--timer-color) !important; }
+
+.subtitle {
+    font-size: 10px; opacity: 0.6; margin-top: 2px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+/* Area di Gioco e Home */
+#game-area { 
+    display: none; flex-grow: 1; width: 100%; max-width: 800px;
+    padding: 10px; overflow: hidden; justify-content: center;
+}
+
+#home-screen.menu { 
+    display: flex; flex-direction: column; 
+    align-items: center; gap: 12px;
+    width: 90%; max-width: 280px;
+    margin: 20px auto auto auto; /* Spostato più in alto */
+}
+
+/* Griglia iOS */
+.grid-container {
+    display: grid; grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    gap: 1px; background-color: var(--grid-border);
+    border: 1px solid var(--grid-border);
+    border-radius: 12px; overflow: hidden;
+    width: 100%; aspect-ratio: 1/1;
+}
+
+.cell { position: relative; background-color: #ffffff; }
+.cell.black { background-color: var(--black-cell) !important; }
+.cell span { position: absolute; top: 1px; left: 2px; font-size: 8px; color: #8e8e93; }
+
+.cell input {
+    width: 100%; height: 100%; border: none; background: transparent;
+    text-align: center; font-size: 20px; font-weight: 700;
+    text-transform: uppercase; outline: none; color: #000;
+}
+
+/* Bottoni Stile iOS */
+button {
+    background: var(--btn-bg); color: var(--btn-text);
+    border: none; padding: 14px 20px;
+    border-radius: var(--ios-radius);
+    font-size: 16px; font-weight: 600;
+    cursor: pointer; transition: transform 0.1s, opacity 0.2s;
+}
+
+button:active { transform: scale(0.96); opacity: 0.7; }
+
+button.primary {
+    background-color: var(--btn-text) !important;
+    color: var(--primary-txt) !important;
+}
+
+/* Pannello Temi a Caselline */
+#theme-panel { 
+    display: none; position: fixed; 
+    top: 50%; left: 50%; transform: translate(-50%, -50%); 
+    background: var(--btn-bg); padding: 20px; 
+    border-radius: 28px; z-index: 1000; width: 85%; max-width: 320px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+#theme-panel h3 { margin: 0 0 15px 0; text-align: center; font-size: 18px; }
+
+.theme-grid { 
+    display: grid; grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; width: 100%; 
+}
+
+.theme-grid button {
+    aspect-ratio: 1 / 0.8; padding: 10px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 14px; border-radius: 18px;
+    background: rgba(120, 120, 128, 0.1);
+}
+
+.theme-grid button span { font-size: 22px; margin-bottom: 5px; }
+
+/* Overlay */
+#overlay { 
+    display: none; position: fixed; top:0; left:0; width:100%; height:100%; 
+    background: rgba(0,0,0,0.3); z-index:999; backdrop-filter: blur(8px); 
+}
+
+/* Indizi stile iOS List */
+.clue-item { 
+    background: var(--btn-bg); padding: 12px; 
+    margin-bottom: 4px; border-radius: 10px; font-size: 15px; 
+    border: 0.5px solid rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (orientation: landscape) {
+    #game-area { flex-direction: row; align-items: flex-start; gap: 20px; }
+    .game-column-left { height: 90vh; aspect-ratio: 1/1; }
+    .game-column-center { flex-grow: 1; height: 90vh; overflow-y: auto; }
+}
+</style>
+ 
+    
+    
+</head>
+<body class="theme-papiro">
+
+    <header>
+        <h1>CRUCI-BIBBIA <span id="header-timer">00:00</span></h1>
+        <div class="subtitle">Doppio tap per Full Screen</div>
+    </header>
+
+    <div id="home-screen" class="menu">
+        <button class="primary" onclick="gestisciNuovoGioco()">NUOVO CRUCIVERBA</button>
+        <button onclick="toggleTemi()">CAMBIA TEMA</button>
+        <button onclick="condividi('App')">CONDIVIDI APP</button>
+    </div>
+
+    <div id="overlay" onclick="toggleTemi()"></div>
+    <div id="theme-panel">
+        <h3 style="text-align:center; color: var(--text-color);">Scegli Tema</h3>
+        <div class="theme-grid">
+            <button onclick="setTheme('papiro','#f2e8cf')">📜 Papiro</button>
+            <button onclick="setTheme('moderno','#f2f2f7')">📱 Moderno</button>
+            <button onclick="setTheme('notte','#1c1c1e')">🌙 Notte</button>
+            <button onclick="setTheme('olivo','#e8f5e9')">🌿 Olivo</button>
+            <button onclick="setTheme('foresta','#1b5e20')">🌲 Foresta</button>
+            <button onclick="setTheme('oceano','#003366')">🌊 Oceano</button>
+            <button onclick="setTheme('vino','#4a0404')">🍷 Vino</button>
+            <button onclick="setTheme('porpora','#f3e5f5')">👑 Porpora</button>
+        </div>
+        <button onclick="toggleTemi()" style="margin-top:15px; width:100%; background: #ff3b30; color: white;">Chiudi</button>
+    </div>
+
+    <div id="game-area">
+        <div class="game-column-left">
+            <div class="grid-wrapper">
+                <div class="grid-container" id="grid"></div>
+            </div>
+            <div class="game-nav portrait-only">
+                <button onclick="gestisciNuovoGioco()">NUOVA</button>
+                <button onclick="condividi('Sfida')">SFIDA</button>
+                <button onclick="confermaReset()" class="danger">RESET</button>
+                <button onclick="tornaHome()">ESCI</button>
+            </div>
+        </div>
+
+        <div class="game-column-center">
+            <div id="clues-container">
+                <div class="clue-section">
+                    <h3>ORIZZONTALI</h3>
+                    <div id="clues-h"></div>
+                </div>
+                <div class="clue-section">
+                    <h3>VERTICALI</h3>
+                    <div id="clues-v"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-column-right">
+            <div class="game-nav landscape-only">
+                <button onclick="gestisciNuovoGioco()">NUOVA</button>
+                <button onclick="toggleTemi()">TEMI</button>
+                <button onclick="condividi('Sfida')">SFIDA</button>
+                <button onclick="confermaReset()" class="danger">RESET</button>
+                <button onclick="tornaHome()">ESCI</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="schemi.js"></script>
+
+    <script>
+        let seconds = 0, timerInterval, giocoAttivo = false;
+        let schemaCorrente = null;
+
+        function avviaCruciverba() {
+            if (typeof DATABASE_SCHEMI === 'undefined' || DATABASE_SCHEMI.length === 0) {
+                alert("Database schemi non caricato correttamente.");
+                return;
+            }
+            giocoAttivo = true;
+            document.getElementById('home-screen').style.display = 'none';
+            document.getElementById('game-area').style.display = 'flex';
+            
+            // Pesca Random
+            const indiceRandom = Math.floor(Math.random() * DATABASE_SCHEMI.length);
+            schemaCorrente = DATABASE_SCHEMI[indiceRandom];
+            
+            costruisciGriglia(schemaCorrente);
+            mostraIndicazioni(schemaCorrente);
+            resetTimer();
+            startTimer();
+        }
+
+        function gestisciNuovoGioco() {
+            if (giocoAttivo && !confirm("Vuoi iniziare un nuovo schema?")) return;
+            avviaCruciverba();
+        }
+
+        function costruisciGriglia(s) {
+            const g = document.getElementById('grid');
+            g.innerHTML = '';
+            const m = Array(11).fill().map(() => Array(11).fill(null));
+            
+            s.parole.forEach(p => {
+                for(let i=0; i<p.w.length; i++) {
+                    let cx = p.d === 'H' ? p.x + i : p.x;
+                    let cy = p.d === 'V' ? p.y + i : p.y;
+                    if(cx < 11 && cy < 11) {
+                        if(!m[cy][cx]) m[cy][cx] = { num: [] };
+                        if(i === 0) m[cy][cx].num.push(p.n);
+                    }
+                }
+            });
+
+            for(let y=0; y<11; y++) {
+                for(let x=0; x<11; x++) {
+                    const cellData = m[y][x];
+                    const c = document.createElement('div');
+                    c.className = cellData ? 'cell' : 'cell black';
+                    if(cellData) {
+                        if(cellData.num.length > 0) {
+                            const n = document.createElement('span');
+                            n.innerText = cellData.num[0];
+                            c.appendChild(n);
+                        }
+                        const input = document.createElement('input');
+                        input.maxLength = 1;
+                        c.appendChild(input);
+                    }
+                    g.appendChild(c);
+                }
+            }
+        }
+
+        function mostraIndicazioni(s) {
+            const h = document.getElementById('clues-h'), v = document.getElementById('clues-v');
+            h.innerHTML = ''; v.innerHTML = '';
+            const mapH = s.parole.filter(p => p.d === 'H').sort((a,b) => parseInt(a.n) - parseInt(b.n));
+            const mapV = s.parole.filter(p => p.d === 'V').sort((a,b) => parseInt(a.n) - parseInt(b.n));
+            mapH.forEach(p => {
+                const d = document.createElement('div'); d.className = 'clue-item';
+                d.innerHTML = `<strong>${p.n}.</strong> ${p.c}`; h.appendChild(d);
+            });
+            mapV.forEach(p => {
+                const d = document.createElement('div'); d.className = 'clue-item';
+                d.innerHTML = `<strong>${p.n}.</strong> ${p.c}`; v.appendChild(d);
+            });
+        }
+
+        function toggleTemi() {
+            const p = document.getElementById('theme-panel'), o = document.getElementById('overlay');
+            const v = p.style.display === 'block';
+            p.style.display = v ? 'none' : 'block'; o.style.display = v ? 'none' : 'block';
+        }
+
+        function setTheme(t, c) {
+            document.body.className = 'theme-' + t;
+            document.getElementById('theme-meta').content = c;
+            toggleTemi();
+        }
+
+        async function condividi(tipo) {
+            let testo = "Gioca a CRUCI-BIBBIA! Divertente e istruttivo.";
+            if(tipo === 'Sfida') {
+                testo = "Ti sfido a CRUCI-BIBBIA! Completato in " + document.getElementById('header-timer').innerText + ". Fai di meglio?";
+            }
+            if(navigator.share) {
+                try {
+                    await navigator.share({ title: 'CRUCI-BIBBIA', text: testo, url: window.location.href });
+                } catch(e) { console.log("Share cancel"); }
+            } else {
+                alert("Condivisione non supportata. Copia il link della pagina.");
+            }
+        }
+
+        function confermaReset() { if(confirm("Resettare lettere?")) document.querySelectorAll('.cell input').forEach(i => i.value = ''); }
+        function tornaHome() { if(confirm("Tornare alla Home?")) location.reload(); }
+        function startTimer() { clearInterval(timerInterval); timerInterval = setInterval(() => { seconds++; aggiornaTimer(); }, 1000); }
+        function aggiornaTimer() {
+            let m = Math.floor(seconds/60).toString().padStart(2,'0'), s = (seconds%60).toString().padStart(2,'0');
+            document.getElementById('header-timer').innerText = `${m}:${s}`;
+        }
+        function resetTimer() { seconds = 0; aggiornaTimer(); }
+
+        // Full Screen con doppio tap
+        let lastTapTime = 0;
+        document.addEventListener('touchend', function(e) {
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - lastTapTime;
+            if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+                if (tapLength < 300 && tapLength > 0) {
+                    e.preventDefault();
+                    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+                    else document.exitFullscreen();
+                }
+            }
+            lastTapTime = currentTime;
+        });
+
+        // Registrazione Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW error', err));
+            });
+        }
+    </script>
+</body>
+</html>
