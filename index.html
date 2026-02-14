@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CRUCI-BIBBIA</title>
     <meta id="theme-meta" name="theme-color" content="#f2e8cf">
+    
+    <link rel="icon" type="image/png" href="icona.png">
+    <link rel="apple-touch-icon" href="icona.png">
+    <link rel="manifest" href="manifest.json">
 
     <style>
         :root {
@@ -170,7 +174,7 @@
     <script>
         let seconds = 0, timerInterval, giocoAttivo = false;
         
-        // SCHEMA 11x11 SENZA RIGHE/COLONNE NERE
+        // SCHEMA 11x11 SENZA RIGHE NERE
         const schema = {
             parole: [
                 {x:0, y:0, d:'H', n:'1', w:'GERUSALEMME', c:'La città santa'},
@@ -251,20 +255,15 @@
         function mostraIndicazioni(s) {
             const h = document.getElementById('clues-h'), v = document.getElementById('clues-v');
             h.innerHTML = ''; v.innerHTML = '';
-            
-            // Filtro duplicati per numeri visualizzati (stesso numero per H e V)
             const mapH = s.parole.filter(p => p.d === 'H').sort((a,b) => a.n - b.n);
             const mapV = s.parole.filter(p => p.d === 'V').sort((a,b) => a.n - b.n);
-
             mapH.forEach(p => {
                 const d = document.createElement('div'); d.className = 'clue-item';
-                d.innerHTML = `<strong>${p.n}.</strong> ${p.c}`;
-                h.appendChild(d);
+                d.innerHTML = `<strong>${p.n}.</strong> ${p.c}`; h.appendChild(d);
             });
             mapV.forEach(p => {
                 const d = document.createElement('div'); d.className = 'clue-item';
-                d.innerHTML = `<strong>${p.n}.</strong> ${p.c}`;
-                v.appendChild(d);
+                d.innerHTML = `<strong>${p.n}.</strong> ${p.c}`; v.appendChild(d);
             });
         }
 
@@ -296,7 +295,6 @@
 
         function confermaReset() { if(confirm("Resettare lettere?")) document.querySelectorAll('.cell input').forEach(i => i.value = ''); }
         function tornaHome() { if(confirm("Tornare alla Home?")) location.reload(); }
-        
         function startTimer() { clearInterval(timerInterval); timerInterval = setInterval(() => { seconds++; aggiornaTimer(); }, 1000); }
         function aggiornaTimer() {
             let m = Math.floor(seconds/60).toString().padStart(2,'0'), s = (seconds%60).toString().padStart(2,'0');
