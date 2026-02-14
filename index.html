@@ -19,17 +19,26 @@
 
     <style>
         :root {
-            --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --grid-border: #8e8e93; --black-cell: #1c1c1e;
-        }
+    --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --grid-border: #8e8e93; --black-cell: #1c1c1e; --primary-btn-text: #ffffff;
+}
 
-        body.theme-papiro  { --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --black-cell: #1c1c1e; }
-        body.theme-moderno { --bg-color: #f2f2f7; --btn-bg: #ffffff; --btn-text: #007aff; --text-color: #1c1c1e; --black-cell: #3a3a3c; }
-        body.theme-notte   { --bg-color: #1c1c1e; --btn-bg: #2c2c2e; --btn-text: #0a84ff; --text-color: #ffffff; --black-cell: #000000; }
-        body.theme-olivo   { --bg-color: #e8f5e9; --btn-bg: #ffffff; --btn-text: #2e7d32; --text-color: #1b5e20; --black-cell: #2e3d2e; }
-        body.theme-foresta { --bg-color: #1b5e20; --btn-bg: #2e7d32; --btn-text: #4a3728; --text-color: #4a3728; --black-cell: #0a2e0a; }
-        body.theme-oceano  { --bg-color: #003366; --btn-bg: #00509d; --btn-text: #4a3728; --text-color: #4a3728; --black-cell: #001a33; }
-        body.theme-vino    { --bg-color: #4a0404; --btn-bg: #800000; --btn-text: #4a3728; --text-color: #4a3728; --black-cell: #2a0000; }
-        body.theme-porpora { --bg-color: #f3e5f5; --btn-bg: #7b1fa2; --btn-text: #4a3728; --text-color: #4a148c; --black-cell: #2c003e; }
+/* Temi Chiari */
+body.theme-papiro  { --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --black-cell: #1c1c1e; --primary-btn-text: #ffffff; }
+body.theme-moderno { --bg-color: #f2f2f7; --btn-bg: #ffffff; --btn-text: #007aff; --text-color: #1c1c1e; --black-cell: #3a3a3c; --primary-btn-text: #ffffff; }
+body.theme-olivo   { --bg-color: #e8f5e9; --btn-bg: #ffffff; --btn-text: #2e7d32; --text-color: #1b5e20; --black-cell: #2e3d2e; --primary-btn-text: #ffffff; }
+body.theme-porpora { --bg-color: #f3e5f5; --btn-bg: #7b1fa2; --btn-text: #ffffff; --text-color: #4a148c; --black-cell: #2c003e; --primary-btn-text: #ffffff; }
+
+/* Temi Scuri con correzione contrasto pulsanti */
+body.theme-notte   { --bg-color: #1c1c1e; --btn-bg: #2c2c2e; --btn-text: #0a84ff; --text-color: #ffffff; --black-cell: #000000; --primary-btn-text: #ffffff; }
+body.theme-foresta { --bg-color: #1b5e20; --btn-bg: #2e7d32; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #0a2e0a; --primary-btn-text: #1b5e20; }
+body.theme-oceano  { --bg-color: #003366; --btn-bg: #00509d; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #001a33; --primary-btn-text: #003366; }
+body.theme-vino    { --bg-color: #4a0404; --btn-bg: #800000; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #2a0000; --primary-btn-text: #4a0404; }
+
+/* APPLICAZIONE VARIABILE AL PULSANTE */
+button.primary { 
+    background: var(--btn-text); 
+    color: var(--primary-btn-text) !important; 
+}
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
