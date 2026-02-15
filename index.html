@@ -242,7 +242,25 @@
 
     <script>
         
-        <script src="schemi.js"></script>
+// Questa variabile conterrà tutto
+let DATABASE_SCHEMI = [...SCHEMA_INTERNO];
+
+// Funzione che gira al caricamento della pagina
+window.onload = () => {
+    // Se il file schemi.js ha caricato SCHEMI_BIBLICI, uniamoli
+    if (typeof SCHEMI_BIBLICI !== 'undefined') {
+        DATABASE_SCHEMI = [...SCHEMA_INTERNO, ...SCHEMI_BIBLICI];
+        console.log("Database caricato: " + DATABASE_SCHEMI.length + " schemi pronti.");
+    }
+    
+    // Controlla se l'utente è stato sfidato tramite link
+    const urlParams = new URLSearchParams(window.location.search);
+    const schemaId = urlParams.get('schema');
+    if (schemaId) {
+        avviaCruciverba(parseInt(schemaId));
+    }
+};
+        
 <script>
         
         // 1. Definiamo lo schema interno (quello che vuoi mantenere nel codice)
@@ -307,25 +325,46 @@ if (typeof SCHEMI_BIBLICI !== 'undefined') {
         }
 
         function avviaCruciverba(idForzato = null) {
-            giocoAttivo = true;
-            document.getElementById('home-screen').style.display = 'none';
-            document.getElementById('game-area').style.display = 'flex';
-            document.body.classList.add('in-game');
-            schemaCorrente = idForzato ? (DATABASE_SCHEMI.find(s => s.id === idForzato) || DATABASE_SCHEMI[0]) : DATABASE_SCHEMI[Math.floor(Math.random() * DATABASE_SCHEMI.length)];
-            
-            mappaSoluzione = {};
-            schemaCorrente.parole.forEach(p => {
-                for(let i=0; i<p.w.length; i++) {
-                    let cx = p.d === 'H' ? p.x + i : p.x;
-                    let cy = p.d === 'V' ? p.y + i : p.y;
-                    mappaSoluzione[`${cx},${cy}`] = p.w[i].toUpperCase();
-                }
-            });
+    // 1. Stato del gioco e transizione grafica
+    giocoAttivo = true;
+    document.getElementById('home-screen').style.display = 'none';
+    document.getElementById('game-area').style.display = 'flex';
+    document.body.classList.add('in-game');
 
-            costruisciGriglia(schemaCorrente);
-            mostraIndicazioni(schemaCorrente);
-            resetTimer(); startTimer();
+    // 2. Selezione dello schema
+    // Se idForzato esiste (link sfida), cerca lo schema con quell'ID.
+    // Altrimenti, pesca un numero a caso tra 0 e la lunghezza totale del database.
+    if (idForzato !== null) {
+        schemaCorrente = DATABASE_SCHEMI.find(s => s.id === idForzato) || DATABASE_SCHEMI[0];
+    } else {
+        const indiceRandom = Math.floor(Math.random() * DATABASE_SCHEMI.length);
+        schemaCorrente = DATABASE_SCHEMI[indiceRandom];
+    }
+
+    // 3. Reset del timer e dei dati precedenti
+    seconds = 0;
+    clearInterval(timerInterval);
+    document.getElementById('header-timer').innerText = "00:00";
+    mappaSoluzione = {}; 
+
+    // 4. Costruzione del tabellone e delle liste definizioni
+    inizializzaGriglia();
+    
+    // 5. Avvio del timer di gioco
+    timerInterval = setInterval(() => {
+        if (giocoAttivo) {
+            seconds++;
+            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const s = (seconds % 60).toString().padStart(2, '0');
+            document.getElementById('header-timer').innerText = `${m}:${s}`;
         }
+    }, 1000);
+
+    // 6. Feedback visivo (opzionale: scroll in alto per mobile)
+    window.scrollTo(0, 0);
+    console.log("Schema avviato ID:", schemaCorrente.id);
+}
+
 
         function gestisciNuovoGioco() { 
             if (window.location.search) window.history.replaceState({}, '', window.location.pathname);
