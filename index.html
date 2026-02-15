@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>CRUCI-BIBBIA</title>
+    
+    <meta id="theme-meta" name="theme-color" content="#f2e8cf">
+
+    <meta property="og:title" content="CRUCI-BIBBIA">
+    <meta property="og:description" content="Riuscirai a battermi? Gioca allo stesso mio schema!">
+    <meta property="og:image" content="icona-512.png">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="icona-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icona-512.png">
+    <link rel="apple-touch-icon" href="icona-192.png">
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        :root {
+            --ios-radius: 14px;
+            --ios-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+            --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --grid-border: #8e8e93; --black-cell: #1c1c1e; --primary-txt: #ffffff; --timer-color: #8b5a2b;
+        }
+
+        /* Temi */
+        body.theme-papiro  { --bg-color: #f2e8cf; --btn-bg: #ffffff; --btn-text: #8b5a2b; --text-color: #4a3728; --black-cell: #1c1c1e; --primary-txt: #ffffff; --timer-color: #8b5a2b; --grid-border: rgba(0,0,0,0.1); }
+        body.theme-moderno { --bg-color: #f2f2f7; --btn-bg: #ffffff; --btn-text: #007aff; --text-color: #1c1c1e; --black-cell: #3a3a3c; --primary-txt: #ffffff; --timer-color: #007aff; --grid-border: #c6c6c8; }
+        body.theme-olivo   { --bg-color: #e8f5e9; --btn-bg: #ffffff; --btn-text: #2e7d32; --text-color: #1b5e20; --black-cell: #2e3d2e; --primary-txt: #ffffff; --timer-color: #2e7d32; --grid-border: rgba(0,0,0,0.1); }
+        body.theme-notte   { --bg-color: #000000; --btn-bg: #1c1c1e; --btn-text: #0a84ff; --text-color: #ffffff; --black-cell: #38383a; --primary-txt: #ffffff; --timer-color: #0a84ff; --grid-border: #38383a; }
+        body.theme-foresta { --bg-color: #1b5e20; --btn-bg: #2e7d32; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #0a2e0a; --primary-txt: #1b5e20; --timer-color: #ffffff; --grid-border: rgba(255,255,255,0.1); }
+        body.theme-oceano  { --bg-color: #003366; --btn-bg: #00509d; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #001a33; --primary-txt: #003366; --timer-color: #ffffff; --grid-border: rgba(255,255,255,0.1); }
+        body.theme-vino    { --bg-color: #4a0404; --btn-bg: #800000; --btn-text: #ffffff; --text-color: #ffffff; --black-cell: #2a0000; --primary-txt: #4a0404; --timer-color: #ffffff; --grid-border: rgba(255,255,255,0.1); }
+        body.theme-porpora { --bg-color: #f3e5f5; --btn-bg: #ffffff; --btn-text: #7b1fa2; --text-color: #4a148c; --black-cell: #2c003e; --primary-txt: #ffffff; --timer-color: #7b1fa2; --grid-border: rgba(0,0,0,0.1); }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: var(--ios-font); margin: 0; padding: 0; height: 100svh; width: 100vw; display: flex; flex-direction: column; align-items: center; overflow: hidden; transition: background 0.3s ease; }
+        
+        header { display: none; flex-shrink: 0; width: 100%; padding: 8px 20px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 0.5px solid var(--grid-border); text-align: center; z-index: 100; }
+        body.in-game header { display: block; }
+        #header-timer { font-size: 18px; font-weight: 700; color: var(--timer-color) !important; }
+
+        #home-screen { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 90%; max-width: 280px; }
+        .home-header { text-align: center; margin-top: 5svh; margin-bottom: 20px; }
+        
+        
+        #home-screen button {
+    width: 100%;
+    max-width: 300px;
+    padding: 18px 24px; /* Rende il pulsante più alto e comodo */
+    font-size: 18px;    /* Testo più grande */
+    font-weight: 700;
+    margin-bottom: 12px;
+    border-radius: 18px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: block; /* Li mette uno sotto l'altro */
+}
+
+/* Stile specifico per il pulsante "NUOVO GIOCO" */
+#home-screen button.primary {
+    font-size: 20px;
+    padding: 22px 24px;
+    background-color: var(--btn-text) !important;
+    color: var(--primary-txt) !important;
+}
+        
+        .home-icon {
+    width: 110px;  /* Aumentata da 80px */
+    height: 110px;
+    border-radius: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border: 3px solid white; /* Un bordino bianco la fa risaltare */
+}
+
+       .home-header h1 {
+    font-size: 42px; /* Aumentato da 32px */
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+        body.in-game .home-header, body.in-game #home-screen { display: none; }
+
+        #game-area { display: none; flex-grow: 1; width: 100%; overflow: hidden; position: relative; }
+        .grid-container { display: grid; grid-template-columns: repeat(11, 1fr); grid-template-rows: repeat(11, 1fr); gap: 1px; background-color: var(--grid-border); border: 1px solid var(--grid-border); border-radius: 10px; overflow: hidden; width: 100%; height: 100%; aspect-ratio: 1/1; max-width: 100%; max-height: 100%; }
+        .cell { position: relative; background-color: #ffffff; }
+        .cell.black { background-color: var(--black-cell) !important; }
+        .cell span {
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    /* Un po' più grandi e leggibili */
+    font-size: clamp(9px, 1.8vw, 11px); 
+    font-weight: 900;
+    /* Colore che stacca bene (es. Blu scuro o Grigio Antracite) */
+    color: #2c3e50; 
+    z-index: 10;
+    pointer-events: none;
+    line-height: 1;
+}
+
+        .cell input { width: 100%; height: 100%; border: none; background: transparent; text-align: center; font-size: clamp(14px, 4vw, 20px); font-weight: 700; text-transform: uppercase; outline: none; color: #000; padding: 0; }
+        .cell input.error { color: #ff3b30 !important; }
+
+        button { background: var(--btn-bg); color: var(--btn-text); border: none; padding: 12px 18px; border-radius: var(--ios-radius); font-size: 15px; font-weight: 600; cursor: pointer; transition: transform 0.1s; }
+        button:active { transform: scale(0.96); }
+        button.primary { background-color: var(--btn-text) !important; color: var(--primary-txt) !important; }
+        .danger { color: #ff3b30; }
+
+        #theme-panel { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--btn-bg); padding: 20px; border-radius: 28px; z-index: 1000; width: 85%; max-width: 320px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+        .theme-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; width: 100%; }
+        #overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.3); z-index:999; backdrop-filter: blur(8px); }
+
+        .clue-section h3 { font-size: 12px; color: var(--text-color); opacity: 0.7; margin: 12px 0 6px 5px; text-transform: uppercase; font-weight: 800; }
+        .clue-item { background: var(--btn-bg); padding: 12px; margin-bottom: 5px; border-radius: 10px; font-size: 13px; border: 0.5px solid rgba(0,0,0,0.05); }
+        #clues-container { padding-bottom: 120px; }
+
+        @media (orientation: portrait) {
+            #game-area { flex-direction: column; align-items: center; padding: 10px; height: calc(100svh - 55px); }
+            .game-column-left { width: 100%; max-width: 90vw; flex-shrink: 0; margin-bottom: 10px; }
+            .game-nav { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; width: 100%; margin-bottom: 10px; }
+            .game-nav button { flex: 1; min-width: 65px; padding: 8px 4px; font-size: 11px; }
+            .game-column-center { width: 100%; flex-grow: 1; overflow-y: auto; }
+            .landscape-only { display: none; }
+        }
+
+        @media (orientation: landscape) {
+            #game-area { flex-direction: row; padding: 8px 15px; gap: 15px; height: calc(100svh - 50px); align-items: stretch; }
+            .game-column-left { height: 100%; flex: 0 1 auto; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+            .game-column-center { flex: 1 1 0; height: 100%; overflow-y: auto; padding-right: 5px; }
+            .game-column-right { width: 110px; display: flex; flex-direction: column; gap: 5px; flex-shrink: 0; }
+            .game-column-right button { width: 100%; padding: 8px; font-size: 11px; }
+            .portrait-only { display: none; }
+            .grid-container { height: 90svh; width: 90svh; }
+        }
+        
+        @media (orientation: landscape) {
+    /* Layout per i pulsanti della Home in orizzontale */
+    #home-screen .home-content {
+        display: flex;
+        flex-direction: row; /* Mette icone/titolo a sinistra e bottoni a destra */
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 10px;
+    }
+
+    #home-screen .home-header {
+        margin-bottom: 0; /* Rimuove spazio inutile */
+    }
+
+    /* Contenitore dei bottoni in orizzontale */
+    #home-screen .home-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* DUE COLONNE di bottoni */
+        gap: 10px;
+        width: auto;
+        max-width: 500px;
+    }
+
+    #home-screen button {
+        margin-bottom: 0; /* Spazio gestito dalla grid */
+        padding: 12px 15px; /* Più bassi per stare nello schermo */
+        font-size: 14px;
+    }
+
+    #home-screen button.primary {
+        grid-column: span 2; /* Il tasto NUOVO GIOCO occupa tutta la larghezza */
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    /* Rimpiccioliamo l'icona per risparmiare spazio verticale */
+    .home-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .home-header h1 {
+        font-size: 28px;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+
+    <header><div id="header-timer">00:00</div></header>
+
+    <div id="home-screen">
+        <div class="home-header">
+            <img src="icona-192.png" alt="Icona" class="home-icon">
+            <h1>CRUCI-BIBBIA</h1>
+        </div>
+        <button class="primary" onclick="gestisciNuovoGioco()">NUOVO GIOCO</button>
+        <button onclick="toggleTemi()">CAMBIA TEMA</button>
+        <button onclick="condividi('App')">CONDIVIDI APP</button>
+    </div>
+
+    <div id="overlay" onclick="toggleTemi()"></div>
+    <div id="theme-panel">
+        <h3 style="text-align:center; margin-bottom: 15px;">Scegli Tema</h3>
+        <div class="theme-grid">
+            <button onclick="setTheme('papiro','#f2e8cf')">📜 Papiro</button>
+            <button onclick="setTheme('moderno','#f2f2f7')">📱 Moderno</button>
+            <button onclick="setTheme('notte','#1c1c1e')">🌙 Notte</button>
+            <button onclick="setTheme('olivo','#e8f5e9')">🌿 Olivo</button>
+            <button onclick="setTheme('foresta','#1b5e20')">🌲 Foresta</button>
+            <button onclick="setTheme('oceano','#003366')">🌊 Oceano</button>
+            <button onclick="setTheme('vino','#4a0404')">🍷 Vino</button>
+            <button onclick="setTheme('porpora','#f3e5f5')">👑 Porpora</button>
+        </div>
+        <button onclick="toggleTemi()" style="margin-top:15px; width:100%; background: #ff3b30; color: white;">Chiudi</button>
+    </div>
+
+    <div id="game-area">
+        <div class="game-column-left"><div class="grid-container" id="grid"></div></div>
+        <div class="game-nav portrait-only">
+            <button onclick="gestisciNuovoGioco()">NUOVA</button>
+            <button onclick="condividi('Sfida')">SFIDA</button>
+            <button onclick="toggleTemi()">TEMI</button>
+            <button onclick="confermaReset()" class="danger">RESET</button>
+            <button onclick="tornaHome()">ESCI</button>
+        </div>
+        <div class="game-column-center">
+            <div id="clues-container">
+                <div class="clue-section"><h3>ORIZZONTALI</h3><div id="clues-h"></div></div>
+                <div class="clue-section"><h3>VERTICALI</h3><div id="clues-v"></div></div>
+            </div>
+        </div>
+        <div class="game-column-right landscape-only">
+            <button onclick="gestisciNuovoGioco()">NUOVA</button>
+            <button onclick="condividi('Sfida')">SFIDA</button>
+            <button onclick="toggleTemi()">TEMI</button>
+            <button onclick="confermaReset()" class="danger">RESET</button>
+            <button onclick="tornaHome()">ESCI</button>
+        </div>
+    </div>
+
+    <script>
+        
+        <script src="schemi.js"></script>
+<script>
+        
+        // 1. Definiamo lo schema interno (quello che vuoi mantenere nel codice)
+const SCHEMA_INTERNO = [
+    {
+        id: 0, // ID 0 per lo schema base
+        parole: [
+            { n: 1, d: 'H', x: 0, y: 0, w: 'NAZARETH', c: 'Città d\'infanzia di Gesù' },
+            { n: 7, d: 'H', x: 0, y: 2, w: 'ALFA', c: 'La prima lettera greca' },
+            { n: 9, d: 'H', x: 5, y: 2, w: 'DAVIDE', c: 'Il pastore che divenne re' },
+            { n: 11, d: 'H', x: 0, y: 4, w: 'EDEN', c: 'Il paradiso terrestre' },
+            { n: 12, d: 'H', x: 6, y: 4, w: 'NOE', c: 'Il patriarca dell\'arca' },
+            { n: 14, d: 'H', x: 0, y: 6, w: 'ESAÙ', c: 'Vendette la primogenitura' },
+            { n: 15, d: 'H', x: 5, y: 6, w: 'ADAMO', c: 'Formato dalla polvere' },
+            { n: 17, d: 'H', x: 0, y: 8, w: 'SARA', c: 'Moglie di Abraamo' },
+            { n: 18, d: 'H', x: 5, y: 8, w: 'MARTA', c: 'Sorella di Lazzaro' },
+            { n: 19, d: 'H', x: 0, y: 10, w: 'GIACOBBE', c: 'Lottò con un angelo' },
+            { n: 1, d: 'V', x: 0, y: 0, w: 'NAIN', c: 'Città dove fu risuscitato un ragazzo' },
+            { n: 2, d: 'V', x: 2, y: 0, w: 'ZADOK', c: 'Sacerdote fedele' },
+            { n: 3, d: 'V', x: 4, y: 0, w: 'RE', c: 'Lo fu Salomone' },
+            { n: 4, d: 'V', x: 6, y: 0, w: 'TITO', c: 'Destinatario di una lettera di Paolo' },
+            { n: 5, d: 'V', x: 8, y: 0, w: 'HERMON', c: 'Monte famoso per la rugiada' },
+            { n: 6, d: 'V', x: 10, y: 0, w: 'EVA', c: 'La prima donna' },
+            { n: 8, d: 'V', x: 1, y: 4, w: 'DEBORA', c: 'Profetessa e giudice' },
+            { n: 10, d: 'V', x: 9, y: 4, w: 'ENOC', c: 'Camminò con il vero Dio' }
+        ]
+    }
+];
+
+// 2. Uniamo lo schema interno con quelli esterni se presenti
+let DATABASE_SCHEMI = [...SCHEMA_INTERNO];
+
+// Se SCHEMI_BIBLICI è stato caricato dal file esterno, lo aggiungiamo
+if (typeof SCHEMI_BIBLICI !== 'undefined') {
+    DATABASE_SCHEMI = DATABASE_SCHEMI.concat(SCHEMI_BIBLICI);
+}
+
+
+        let seconds = 0, timerInterval, giocoAttivo = false, schemaCorrente = null;
+        let mappaSoluzione = {}; 
+
+        window.onload = () => {
+            caricaTemaSalvato();
+            const urlParams = new URLSearchParams(window.location.search);
+            const schemaId = urlParams.get('schema');
+            if (schemaId) avviaCruciverba(parseInt(schemaId));
+        };
+
+        function caricaTemaSalvato() {
+            const tema = localStorage.getItem('cruci_tema') || 'papiro';
+            const colore = localStorage.getItem('cruci_colore') || '#f2e8cf';
+            document.body.className = 'theme-' + tema;
+            document.getElementById('theme-meta').content = colore;
+        }
+
+        function setTheme(t, c) {
+            localStorage.setItem('cruci_tema', t);
+            localStorage.setItem('cruci_colore', c);
+            document.body.className = 'theme-' + t + (giocoAttivo ? ' in-game' : '');
+            document.getElementById('theme-meta').content = c;
+            toggleTemi();
+        }
+
+        function avviaCruciverba(idForzato = null) {
+            giocoAttivo = true;
+            document.getElementById('home-screen').style.display = 'none';
+            document.getElementById('game-area').style.display = 'flex';
+            document.body.classList.add('in-game');
+            schemaCorrente = idForzato ? (DATABASE_SCHEMI.find(s => s.id === idForzato) || DATABASE_SCHEMI[0]) : DATABASE_SCHEMI[Math.floor(Math.random() * DATABASE_SCHEMI.length)];
+            
+            mappaSoluzione = {};
+            schemaCorrente.parole.forEach(p => {
+                for(let i=0; i<p.w.length; i++) {
+                    let cx = p.d === 'H' ? p.x + i : p.x;
+                    let cy = p.d === 'V' ? p.y + i : p.y;
+                    mappaSoluzione[`${cx},${cy}`] = p.w[i].toUpperCase();
+                }
+            });
+
+            costruisciGriglia(schemaCorrente);
+            mostraIndicazioni(schemaCorrente);
+            resetTimer(); startTimer();
+        }
+
+        function gestisciNuovoGioco() { 
+            if (window.location.search) window.history.replaceState({}, '', window.location.pathname);
+            if (giocoAttivo && !confirm("Abbandonare lo schema corrente?")) return; 
+            avviaCruciverba(); 
+        }
+
+        function costruisciGriglia(s) {
+            const g = document.getElementById('grid'); g.innerHTML = '';
+            const celleOccupate = {};
+            const numeriCelle = {};
+
+            s.parole.forEach(p => {
+                for(let i=0; i<p.w.length; i++) {
+                    let cx = p.d === 'H' ? p.x + i : p.x;
+                    let cy = p.d === 'V' ? p.y + i : p.y;
+                    celleOccupate[`${cx},${cy}`] = true;
+                    if(i === 0) {
+                        if(!numeriCelle[`${cx},${cy}`]) numeriCelle[`${cx},${cy}`] = [];
+                        numeriCelle[`${cx},${cy}`].push(p.n);
+                    }
+                }
+            });
+
+            for(let y=0; y<11; y++) {
+                for(let x=0; x<11; x++) {
+                    const coordinata = `${x},${y}`;
+                    const c = document.createElement('div');
+                    
+                    if(celleOccupate[coordinata]) {
+                        c.className = 'cell';
+                        if(numeriCelle[coordinata]) {
+                            const n = document.createElement('span'); 
+                            n.innerText = numeriCelle[coordinata][0]; 
+                            c.appendChild(n);
+                        }
+                        const input = document.createElement('input'); 
+                        input.maxLength = 1;
+                        input.dataset.coords = coordinata;
+                        input.setAttribute('autocomplete', 'off');
+                        input.addEventListener('input', (e) => gestisciInput(e));
+                        c.appendChild(input);
+                    } else {
+                        c.className = 'cell black';
+                    }
+                    g.appendChild(c);
+                }
+            }
+        }
+
+        function gestisciInput(e) {
+            const input = e.target;
+            input.value = input.value.toUpperCase();
+            input.classList.remove('error');
+
+            const tuttiInput = document.querySelectorAll('.cell input');
+            let pieno = true;
+            tuttiInput.forEach(i => { if(i.value === '') pieno = false; });
+
+            if(pieno) verificaVittoria();
+        }
+
+        function verificaVittoria() {
+            const tuttiInput = document.querySelectorAll('.cell input');
+            let errori = 0;
+            tuttiInput.forEach(input => {
+                if(input.value !== mappaSoluzione[input.dataset.coords]) {
+                    input.classList.add('error');
+                    errori++;
+                }
+            });
+            if(errori === 0) {
+                clearInterval(timerInterval);
+                setTimeout(() => alert(`🏆 VITTORIA!\nTempo: ${document.getElementById('header-timer').innerText}`), 200);
+            }
+        }
+
+        function mostraIndicazioni(s) {
+            const h = document.getElementById('clues-h'), v = document.getElementById('clues-v');
+            h.innerHTML = ''; v.innerHTML = '';
+            s.parole.filter(p => p.d === 'H').sort((a,b) => a.n - b.n).forEach(p => {
+                const d = document.createElement('div'); d.className = 'clue-item';
+                d.innerHTML = `<strong>${p.n}.</strong> ${p.c}`; h.appendChild(d);
+            });
+            s.parole.filter(p => p.d === 'V').sort((a,b) => a.n - b.n).forEach(p => {
+                const d = document.createElement('div'); d.className = 'clue-item';
+                d.innerHTML = `<strong>${p.n}.</strong> ${p.c}`; v.appendChild(d);
+            });
+        }
+
+        async function condividi(tipo) {
+    // 1. Costruiamo l'URL base pulito
+    const baseUrl = window.location.origin + window.location.pathname;
+    
+    // 2. Se stiamo sfidando qualcuno, aggiungiamo l'ID dello schema corrente
+    const shareUrl = tipo === 'Sfida' ? `${baseUrl}?schema=${schemaCorrente.id}` : baseUrl;
+    
+    // 3. Prepariamo il testo del messaggio
+    const shareText = tipo === 'Sfida' 
+        ? `Ti sfido al mio stesso schema. Vediamo chi fa prima!` 
+        : "Prova questo Cruciverba Biblico! È bellissimo.";
+
+    // 4. Usiamo l'API di condivisione del telefono (se disponibile)
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: 'CRUCI-BIBBIA',
+                text: shareText,
+                url: shareUrl
+            });
+        } catch (err) {
+            console.log("Condivisione annullata");
+        }
+    } else {
+        // Fallback per browser PC o vecchi smartphone
+        const tempInput = document.createElement("input");
+        document.body.appendChild(tempInput);
+        tempInput.value = shareUrl;
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Link copiato negli appunti: " + shareUrl);
+    }
+}
+
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+            else if (document.exitFullscreen) document.exitFullscreen();
+        }
+
+        let lastTap = 0;
+        document.addEventListener('touchend', e => {
+            const now = Date.now();
+            if (now - lastTap < 300 && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') toggleFullScreen();
+            lastTap = now;
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'BUTTON') {
+                e.preventDefault(); toggleFullScreen();
+            }
+        });
+
+        function toggleTemi() {
+            const p = document.getElementById('theme-panel'), o = document.getElementById('overlay');
+            const isVisible = p.style.display === 'block';
+            p.style.display = isVisible ? 'none' : 'block'; o.style.display = isVisible ? 'none' : 'block';
+        }
+        function confermaReset() { if(confirm("Cancellare tutto?")) document.querySelectorAll('.cell input').forEach(i => { i.value = ''; i.classList.remove('error'); }); }
+        function tornaHome() { if(confirm("Tornare alla home?")) location.href = window.location.pathname; }
+        function startTimer() { clearInterval(timerInterval); timerInterval = setInterval(() => { seconds++; aggiornaTimer(); }, 1000); }
+        function aggiornaTimer() {
+            let m = Math.floor(seconds/60).toString().padStart(2,'0'), s = (seconds%60).toString().padStart(2,'0');
+            document.getElementById('header-timer').innerText = `${m}:${s}`;
+        }
+        function resetTimer() { seconds = 0; aggiornaTimer(); }
+    </script>
+</body>
+</html>
