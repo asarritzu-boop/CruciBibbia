@@ -44,63 +44,18 @@
         #home-screen { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 90%; max-width: 280px; }
         .home-header { text-align: center; margin-top: 5svh; margin-bottom: 20px; }
         
+        #home-screen button { width: 100%; max-width: 300px; padding: 18px 24px; font-size: 18px; font-weight: 700; margin-bottom: 12px; border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: block; }
+        #home-screen button.primary { font-size: 20px; padding: 22px 24px; background-color: var(--btn-text) !important; color: var(--primary-txt) !important; }
         
-        #home-screen button {
-    width: 100%;
-    max-width: 300px;
-    padding: 18px 24px; /* Rende il pulsante più alto e comodo */
-    font-size: 18px;    /* Testo più grande */
-    font-weight: 700;
-    margin-bottom: 12px;
-    border-radius: 18px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    display: block; /* Li mette uno sotto l'altro */
-}
-
-/* Stile specifico per il pulsante "NUOVO GIOCO" */
-#home-screen button.primary {
-    font-size: 20px;
-    padding: 22px 24px;
-    background-color: var(--btn-text) !important;
-    color: var(--primary-txt) !important;
-}
-        
-        .home-icon {
-    width: 110px;  /* Aumentata da 80px */
-    height: 110px;
-    border-radius: 24px;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    border: 3px solid white; /* Un bordino bianco la fa risaltare */
-}
-
-       .home-header h1 {
-    font-size: 42px; /* Aumentato da 32px */
-    font-weight: 900;
-    letter-spacing: -1.5px;
-    margin: 0;
-    text-transform: uppercase;
-}
+        .home-icon { width: 110px; height: 110px; border-radius: 24px; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); border: 3px solid white; }
+        .home-header h1 { font-size: 42px; font-weight: 900; letter-spacing: -1.5px; margin: 0; text-transform: uppercase; }
         body.in-game .home-header, body.in-game #home-screen { display: none; }
 
         #game-area { display: none; flex-grow: 1; width: 100%; overflow: hidden; position: relative; }
         .grid-container { display: grid; grid-template-columns: repeat(11, 1fr); grid-template-rows: repeat(11, 1fr); gap: 1px; background-color: var(--grid-border); border: 1px solid var(--grid-border); border-radius: 10px; overflow: hidden; width: 100%; height: 100%; aspect-ratio: 1/1; max-width: 100%; max-height: 100%; }
         .cell { position: relative; background-color: #ffffff; }
         .cell.black { background-color: var(--black-cell) !important; }
-        .cell span {
-    position: absolute;
-    top: 1px;
-    left: 2px;
-    /* Un po' più grandi e leggibili */
-    font-size: clamp(9px, 1.8vw, 11px); 
-    font-weight: 900;
-    /* Colore che stacca bene (es. Blu scuro o Grigio Antracite) */
-    color: #2c3e50; 
-    z-index: 10;
-    pointer-events: none;
-    line-height: 1;
-}
-
+        .cell span { position: absolute; top: 1px; left: 2px; font-size: clamp(9px, 1.8vw, 11px); font-weight: 900; color: #2c3e50; z-index: 10; pointer-events: none; line-height: 1; }
         .cell input { width: 100%; height: 100%; border: none; background: transparent; text-align: center; font-size: clamp(14px, 4vw, 20px); font-weight: 700; text-transform: uppercase; outline: none; color: #000; padding: 0; }
         .cell input.error { color: #ff3b30 !important; }
 
@@ -134,56 +89,15 @@
             .game-column-right button { width: 100%; padding: 8px; font-size: 11px; }
             .portrait-only { display: none; }
             .grid-container { height: 90svh; width: 90svh; }
+            
+            #home-screen .home-content { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 30px; padding: 10px; }
+            #home-screen .home-header { margin-bottom: 0; }
+            #home-screen .home-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: auto; max-width: 500px; }
+            #home-screen button { margin-bottom: 0; padding: 12px 15px; font-size: 14px; }
+            #home-screen button.primary { grid-column: span 2; font-size: 18px; padding: 15px; }
+            .home-icon { width: 70px; height: 70px; }
+            .home-header h1 { font-size: 28px; }
         }
-        
-        @media (orientation: landscape) {
-    /* Layout per i pulsanti della Home in orizzontale */
-    #home-screen .home-content {
-        display: flex;
-        flex-direction: row; /* Mette icone/titolo a sinistra e bottoni a destra */
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        padding: 10px;
-    }
-
-    #home-screen .home-header {
-        margin-bottom: 0; /* Rimuove spazio inutile */
-    }
-
-    /* Contenitore dei bottoni in orizzontale */
-    #home-screen .home-buttons {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* DUE COLONNE di bottoni */
-        gap: 10px;
-        width: auto;
-        max-width: 500px;
-    }
-
-    #home-screen button {
-        margin-bottom: 0; /* Spazio gestito dalla grid */
-        padding: 12px 15px; /* Più bassi per stare nello schermo */
-        font-size: 14px;
-    }
-
-    #home-screen button.primary {
-        grid-column: span 2; /* Il tasto NUOVO GIOCO occupa tutta la larghezza */
-        font-size: 18px;
-        padding: 15px;
-    }
-
-    /* Rimpiccioliamo l'icona per risparmiare spazio verticale */
-    .home-icon {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .home-header h1 {
-        font-size: 28px;
-    }
-}
-
-        
     </style>
 </head>
 <body>
@@ -240,64 +154,41 @@
         </div>
     </div>
 
+    <script src="schemi.js"></script>
+
     <script>
-        
-// Questa variabile conterrà tutto
-let DATABASE_SCHEMI = [...SCHEMA_INTERNO];
+        // 1. Definiamo lo schema interno
+        const SCHEMA_INTERNO = [
+            {
+                id: 0,
+                parole: [
+                    { n: 1, d: 'H', x: 0, y: 0, w: 'NAZARETH', c: 'Città d\'infanzia di Gesù' },
+                    { n: 7, d: 'H', x: 0, y: 2, w: 'ALFA', c: 'La prima lettera greca' },
+                    { n: 9, d: 'H', x: 5, y: 2, w: 'DAVIDE', c: 'Il pastore che divenne re' },
+                    { n: 11, d: 'H', x: 0, y: 4, w: 'EDEN', c: 'Il paradiso terrestre' },
+                    { n: 12, d: 'H', x: 6, y: 4, w: 'NOE', c: 'Il patriarca dell\'arca' },
+                    { n: 14, d: 'H', x: 0, y: 6, w: 'ESAÙ', c: 'Vendette la primogenitura' },
+                    { n: 15, d: 'H', x: 5, y: 6, w: 'ADAMO', c: 'Formato dalla polvere' },
+                    { n: 17, d: 'H', x: 0, y: 8, w: 'SARA', c: 'Moglie di Abraamo' },
+                    { n: 18, d: 'H', x: 5, y: 8, w: 'MARTA', c: 'Sorella di Lazzaro' },
+                    { n: 19, d: 'H', x: 0, y: 10, w: 'GIACOBBE', c: 'Lottò con un angelo' },
+                    { n: 1, d: 'V', x: 0, y: 0, w: 'NAIN', c: 'Città dove fu risuscitato un ragazzo' },
+                    { n: 2, d: 'V', x: 2, y: 0, w: 'ZADOK', c: 'Sacerdote fedele' },
+                    { n: 3, d: 'V', x: 4, y: 0, w: 'RE', c: 'Lo fu Salomone' },
+                    { n: 4, d: 'V', x: 6, y: 0, w: 'TITO', c: 'Destinatario di una lettera di Paolo' },
+                    { n: 5, d: 'V', x: 8, y: 0, w: 'HERMON', c: 'Monte famoso per la rugiada' },
+                    { n: 6, d: 'V', x: 10, y: 0, w: 'EVA', c: 'La prima donna' },
+                    { n: 8, d: 'V', x: 1, y: 4, w: 'DEBORA', c: 'Profetessa e giudice' },
+                    { n: 10, d: 'V', x: 9, y: 4, w: 'ENOC', c: 'Camminò con il vero Dio' }
+                ]
+            }
+        ];
 
-// Funzione che gira al caricamento della pagina
-window.onload = () => {
-    // Se il file schemi.js ha caricato SCHEMI_BIBLICI, uniamoli
-    if (typeof SCHEMI_BIBLICI !== 'undefined') {
-        DATABASE_SCHEMI = [...SCHEMA_INTERNO, ...SCHEMI_BIBLICI];
-        console.log("Database caricato: " + DATABASE_SCHEMI.length + " schemi pronti.");
-    }
-    
-    // Controlla se l'utente è stato sfidato tramite link
-    const urlParams = new URLSearchParams(window.location.search);
-    const schemaId = urlParams.get('schema');
-    if (schemaId) {
-        avviaCruciverba(parseInt(schemaId));
-    }
-};
-        
-<script>
-        
-        // 1. Definiamo lo schema interno (quello che vuoi mantenere nel codice)
-const SCHEMA_INTERNO = [
-    {
-        id: 0, // ID 0 per lo schema base
-        parole: [
-            { n: 1, d: 'H', x: 0, y: 0, w: 'NAZARETH', c: 'Città d\'infanzia di Gesù' },
-            { n: 7, d: 'H', x: 0, y: 2, w: 'ALFA', c: 'La prima lettera greca' },
-            { n: 9, d: 'H', x: 5, y: 2, w: 'DAVIDE', c: 'Il pastore che divenne re' },
-            { n: 11, d: 'H', x: 0, y: 4, w: 'EDEN', c: 'Il paradiso terrestre' },
-            { n: 12, d: 'H', x: 6, y: 4, w: 'NOE', c: 'Il patriarca dell\'arca' },
-            { n: 14, d: 'H', x: 0, y: 6, w: 'ESAÙ', c: 'Vendette la primogenitura' },
-            { n: 15, d: 'H', x: 5, y: 6, w: 'ADAMO', c: 'Formato dalla polvere' },
-            { n: 17, d: 'H', x: 0, y: 8, w: 'SARA', c: 'Moglie di Abraamo' },
-            { n: 18, d: 'H', x: 5, y: 8, w: 'MARTA', c: 'Sorella di Lazzaro' },
-            { n: 19, d: 'H', x: 0, y: 10, w: 'GIACOBBE', c: 'Lottò con un angelo' },
-            { n: 1, d: 'V', x: 0, y: 0, w: 'NAIN', c: 'Città dove fu risuscitato un ragazzo' },
-            { n: 2, d: 'V', x: 2, y: 0, w: 'ZADOK', c: 'Sacerdote fedele' },
-            { n: 3, d: 'V', x: 4, y: 0, w: 'RE', c: 'Lo fu Salomone' },
-            { n: 4, d: 'V', x: 6, y: 0, w: 'TITO', c: 'Destinatario di una lettera di Paolo' },
-            { n: 5, d: 'V', x: 8, y: 0, w: 'HERMON', c: 'Monte famoso per la rugiada' },
-            { n: 6, d: 'V', x: 10, y: 0, w: 'EVA', c: 'La prima donna' },
-            { n: 8, d: 'V', x: 1, y: 4, w: 'DEBORA', c: 'Profetessa e giudice' },
-            { n: 10, d: 'V', x: 9, y: 4, w: 'ENOC', c: 'Camminò con il vero Dio' }
-        ]
-    }
-];
-
-// 2. Uniamo lo schema interno con quelli esterni se presenti
-let DATABASE_SCHEMI = [...SCHEMA_INTERNO];
-
-// Se SCHEMI_BIBLICI è stato caricato dal file esterno, lo aggiungiamo
-if (typeof SCHEMI_BIBLICI !== 'undefined') {
-    DATABASE_SCHEMI = DATABASE_SCHEMI.concat(SCHEMI_BIBLICI);
-}
-
+        // 2. Uniamo lo schema interno con quelli esterni se presenti
+        let DATABASE_SCHEMI = [...SCHEMA_INTERNO];
+        if (typeof SCHEMI_BIBLICI !== 'undefined') {
+            DATABASE_SCHEMI = DATABASE_SCHEMI.concat(SCHEMI_BIBLICI);
+        }
 
         let seconds = 0, timerInterval, giocoAttivo = false, schemaCorrente = null;
         let mappaSoluzione = {}; 
@@ -325,46 +216,31 @@ if (typeof SCHEMI_BIBLICI !== 'undefined') {
         }
 
         function avviaCruciverba(idForzato = null) {
-    // 1. Stato del gioco e transizione grafica
-    giocoAttivo = true;
-    document.getElementById('home-screen').style.display = 'none';
-    document.getElementById('game-area').style.display = 'flex';
-    document.body.classList.add('in-game');
+            giocoAttivo = true;
+            document.getElementById('home-screen').style.display = 'none';
+            document.getElementById('game-area').style.display = 'flex';
+            document.body.classList.add('in-game');
+            
+            // Logica di selezione schema
+            if (idForzato !== null) {
+                schemaCorrente = DATABASE_SCHEMI.find(s => s.id === idForzato) || DATABASE_SCHEMI[0];
+            } else {
+                schemaCorrente = DATABASE_SCHEMI[Math.floor(Math.random() * DATABASE_SCHEMI.length)];
+            }
+            
+            mappaSoluzione = {};
+            schemaCorrente.parole.forEach(p => {
+                for(let i=0; i<p.w.length; i++) {
+                    let cx = p.d === 'H' ? p.x + i : p.x;
+                    let cy = p.d === 'V' ? p.y + i : p.y;
+                    mappaSoluzione[`${cx},${cy}`] = p.w[i].toUpperCase();
+                }
+            });
 
-    // 2. Selezione dello schema
-    // Se idForzato esiste (link sfida), cerca lo schema con quell'ID.
-    // Altrimenti, pesca un numero a caso tra 0 e la lunghezza totale del database.
-    if (idForzato !== null) {
-        schemaCorrente = DATABASE_SCHEMI.find(s => s.id === idForzato) || DATABASE_SCHEMI[0];
-    } else {
-        const indiceRandom = Math.floor(Math.random() * DATABASE_SCHEMI.length);
-        schemaCorrente = DATABASE_SCHEMI[indiceRandom];
-    }
-
-    // 3. Reset del timer e dei dati precedenti
-    seconds = 0;
-    clearInterval(timerInterval);
-    document.getElementById('header-timer').innerText = "00:00";
-    mappaSoluzione = {}; 
-
-    // 4. Costruzione del tabellone e delle liste definizioni
-    inizializzaGriglia();
-    
-    // 5. Avvio del timer di gioco
-    timerInterval = setInterval(() => {
-        if (giocoAttivo) {
-            seconds++;
-            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
-            const s = (seconds % 60).toString().padStart(2, '0');
-            document.getElementById('header-timer').innerText = `${m}:${s}`;
+            costruisciGriglia(schemaCorrente);
+            mostraIndicazioni(schemaCorrente);
+            resetTimer(); startTimer();
         }
-    }, 1000);
-
-    // 6. Feedback visivo (opzionale: scroll in alto per mobile)
-    window.scrollTo(0, 0);
-    console.log("Schema avviato ID:", schemaCorrente.id);
-}
-
 
         function gestisciNuovoGioco() { 
             if (window.location.search) window.history.replaceState({}, '', window.location.pathname);
@@ -456,40 +332,32 @@ if (typeof SCHEMI_BIBLICI !== 'undefined') {
         }
 
         async function condividi(tipo) {
-    // 1. Costruiamo l'URL base pulito
-    const baseUrl = window.location.origin + window.location.pathname;
-    
-    // 2. Se stiamo sfidando qualcuno, aggiungiamo l'ID dello schema corrente
-    const shareUrl = tipo === 'Sfida' ? `${baseUrl}?schema=${schemaCorrente.id}` : baseUrl;
-    
-    // 3. Prepariamo il testo del messaggio
-    const shareText = tipo === 'Sfida' 
-        ? `Ti sfido al mio stesso schema. Vediamo chi fa prima!` 
-        : "Prova questo Cruciverba Biblico! È bellissimo.";
+            const baseUrl = window.location.origin + window.location.pathname;
+            const shareUrl = tipo === 'Sfida' ? `${baseUrl}?schema=${schemaCorrente.id}` : baseUrl;
+            const shareText = tipo === 'Sfida' 
+                ? `Ti sfido al mio stesso schema. Vediamo chi fa prima!` 
+                : "Prova questo Cruciverba Biblico! È bellissimo.";
 
-    // 4. Usiamo l'API di condivisione del telefono (se disponibile)
-    if (navigator.share) {
-        try {
-            await navigator.share({
-                title: 'CRUCI-BIBBIA',
-                text: shareText,
-                url: shareUrl
-            });
-        } catch (err) {
-            console.log("Condivisione annullata");
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'CRUCI-BIBBIA',
+                        text: shareText,
+                        url: shareUrl
+                    });
+                } catch (err) {
+                    console.log("Condivisione annullata");
+                }
+            } else {
+                const tempInput = document.createElement("input");
+                document.body.appendChild(tempInput);
+                tempInput.value = shareUrl;
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                alert("Link copiato negli appunti: " + shareUrl);
+            }
         }
-    } else {
-        // Fallback per browser PC o vecchi smartphone
-        const tempInput = document.createElement("input");
-        document.body.appendChild(tempInput);
-        tempInput.value = shareUrl;
-        tempInput.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempInput);
-        alert("Link copiato negli appunti: " + shareUrl);
-    }
-}
-
 
         function toggleFullScreen() {
             if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
