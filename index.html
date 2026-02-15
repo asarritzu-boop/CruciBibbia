@@ -90,6 +90,10 @@
             .portrait-only { display: none; }
             .grid-container { height: 90svh; width: 90svh; }
         }
+        body {
+    touch-action: manipulation; /* Impedisce lo zoom standard del browser al doppio tap */
+        }
+        
     </style>
 </head>
 <body class="theme-papiro">
@@ -351,6 +355,57 @@
             document.getElementById('header-timer').innerText = `${m}:${s}`;
         }
         function resetTimer() { seconds = 0; aggiornaTimer(); }
+
+// Funzione universale per attivare/disattivare il Full Screen
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        // Entra in full screen
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { /* Safari/iOS */
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+            document.documentElement.msRequestFullscreen();
+        }
+    } else {
+        // Esci dal full screen
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    }
+}
+
+// GESTIONE EVENTI
+
+// 1. Barra Spaziatrice (Desktop)
+document.addEventListener('keydown', (e) => {
+    // Evitiamo che attivi il full screen se l'utente sta scrivendo in una cella
+    if (e.code === 'Space' && e.target.tagName !== 'INPUT') {
+        e.preventDefault();
+        toggleFullScreen();
+    }
+});
+
+// 2. Doppio Tap (Mobile)
+let lastTap = 0;
+document.addEventListener('touchend', (e) => {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    
+    // Se il tempo tra due tap è inferiore a 300ms, lo consideriamo doppio tap
+    if (tapLength < 300 && tapLength > 0) {
+        // Evitiamo conflitti se si sta cliccando su un tasto o un input
+        if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+            e.preventDefault();
+            toggleFullScreen();
+        }
+    }
+    lastTap = currentTime;
+});
+        
+        
     </script>
 </body>
 </html>
