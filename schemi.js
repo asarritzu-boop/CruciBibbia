@@ -156,95 +156,7 @@ const SCHEMI_BIBLICI = [
             { n: 4, d: 'V', x: 6, y: 0, w: 'GIONA', c: 'Si lamentò per la morte di una pianta di ricino (Giona 4:9)' }
         ]
     },
-    {
         id: 10,
-        parole: [
-            { n: 1, d: 'H', x: 0, y: 0, w: 'LAMEC', c: 'Sesto discendente di Caino (Genesi 4:18)' },
-            { n: 4, d: 'H', x: 6, y: 0, w: 'GOSUE', c: 'Sostituì Mosè alla guida di Israele (Giosuè 1:2)' },
-            { n: 6, d: 'H', x: 2, y: 2, w: 'ILCHIA', c: 'Padre di Eliachim che era sopra la casa (Isaia 36:3)' }, // Nuova occorrenza di ILCHIA
-            { n: 8, d: 'H', x: 0, y: 4, w: 'GIONATAN', c: 'Il figlio di Saul che difese Davide (1 Samuele 20:32)' },
-            { n: 10, d: 'H', x: 9, y: 4, w: 'AB', c: 'Mese del calendario sacro ebraico' },
-            { n: 12, d: 'H', x: 4, y: 6, w: 'BETEL', c: 'Geova apparve qui a Giacobbe (Genesi 35:1)' },
-            { n: 14, d: 'H', x: 0, y: 8, w: 'LEA', c: 'Madre di Simeon e Levi (Genesi 29:33, 34)' },
-            { n: 1, d: 'V', x: 0, y: 0, w: 'LUCANIA', c: 'Regione visitata durante i viaggi missionari (Atti 14:6)' },
-            { n: 2, d: 'V', x: 4, y: 0, w: 'ESTER', c: 'Rischiò la vita parlando al re (Ester 4:16)' },
-            { n: 3, d: 'V', x: 7, y: 0, w: 'UR', c: 'Luogo abbandonato da Abraamo per comando di Dio' },
-            { n: 5, d: 'V', x: 10, y: 0, w: 'RE', c: 'Melchisedec lo era di Salem (Ebrei 7:1)' },
-            { n: 13, d: 'V', x: 5, y: 6, w: 'AT', c: 'Scritture composte da 39 libri' }
-        ]
-    },
-
-    {
-        id: 6,
-        parole: [
-            { n: 1, d: 'H', x: 0, y: 0, w: 'NAZARETH', c: 'Città della Galilea dove crebbe Gesù (Matteo 2:23)' },
-            { n: 5, d: 'H', x: 0, y: 2, w: 'IAIRO', c: 'Presidente della sinagoga la cui figlia fu risuscitata (Marco 5:22)' }, // Corretto
-            { n: 7, d: 'H', x: 7, y: 2, w: 'ARARAT', c: 'Monti su cui si posò l\'arca dopo il diluvio (Genesi 8:4)' },
-            { n: 9, d: 'H', x: 3, y: 4, w: 'LEA', c: 'Figlia di Labano e prima moglie di Giacobbe (Genesi 29:23)' },
-            { n: 10, d: 'H', x: 7, y: 4, w: 'ESAU', c: 'Vendette la sua primogenitura per un pasto (Genesi 25:34)' },
-            { n: 12, d: 'H', x: 1, y: 6, w: 'MOSE', c: 'Ricevette le due tavolette della Testimonianza (Esodo 31:18)' },
-            { n: 14, d: 'H', x: 6, y: 6, w: 'UR', c: 'Città caldea d\'origine di Abraamo (Genesi 15:7)' },
-            { n: 15, d: 'H', x: 0, y: 8, w: 'GOSUE', c: 'Figlio di Nun e successore di Mosè (Giosuè 1:1)' },
-            { n: 17, d: 'H', x: 7, y: 8, w: 'ADAM', c: 'Significa "uomo di terra rossa" (Glossario)' },
-            { n: 1, d: 'V', x: 0, y: 0, w: 'NEEMIA', c: 'Coppiere del re che ricostruì le mura (Neemia 2:1)' },
-            { n: 2, d: 'V', x: 2, y: 0, w: 'ZACCARIA', c: 'Padre di Giovanni Battista (Luca 1:5)' },
-            { n: 3, d: 'V', x: 4, y: 0, w: 'RE', c: 'Gesù è il Re che governa con giustizia (Isaia 32:1)' },
-            { n: 4, d: 'V', x: 6, y: 0, w: 'TIRSO', c: 'Vino nuovo che rallegra il cuore (Osea 4:11)' }
-        ]
-    },
-    {
-        id: 7,
-        parole: [
-            { n: 1, d: 'H', x: 0, y: 0, w: 'GERUSALEMME', c: 'Capitale del regno di Giuda (2 Samuele 5:5)' },
-            { n: 5, d: 'H', x: 0, y: 2, w: 'SODOMA', c: 'Città distrutta per la sua malvagità (Genesi 19:24)' },
-            { n: 7, d: 'H', x: 7, y: 2, w: 'NINIVE', c: 'Capitale assira che si pentì alla predicazione di Giona (Giona 3:5)' },
-            { n: 9, d: 'H', x: 2, y: 4, w: 'LAMEC', c: 'Pronunciò una profezia riguardante Noè (Genesi 5:28, 29)' },
-            { n: 11, d: 'H', x: 8, y: 4, w: 'BOAZ', c: 'Uomo di Betlemme che agì da ricompratore per Rut (Rut 4:9)' },
-            { n: 13, d: 'H', x: 0, y: 6, w: 'MARTA', c: 'Accolse Gesù e si preoccupava di servirlo (Luca 10:38-40)' },
-            { n: 15, d: 'H', x: 7, y: 6, w: 'GIONA', c: 'Pregò Geova dal ventre di un grande pesce (Giona 2:1)' },
-            { n: 17, d: 'H', x: 3, y: 8, w: 'SARA', c: 'Madre di Isacco a cui Geova restituì la fertilità (Genesi 21:1, 2)' },
-            { n: 1, d: 'V', x: 2, y: 0, w: 'GOMORRA', c: 'Città citata come esempio di giudizio divino (Giuda 7)' },
-            { n: 2, d: 'V', x: 4, y: 0, w: 'SAMUELE', c: 'Udì Geova chiamarlo nel tabernacolo (1 Samuele 3:4)' },
-            { n: 3, d: 'V', x: 6, y: 0, w: 'LUCA', c: 'Il caro medico che scrisse a Teofilo (Colossesi 4:14; Luca 1:3)' },
-            { n: 4, d: 'V', x: 8, y: 0, w: 'OR', c: 'Monte presso la frontiera di Edom (Numeri 20:23)' }
-        ]
-    },
-    {
-        id: 8,
-        parole: [
-            { n: 1, d: 'H', x: 0, y: 0, w: 'ABRAAMO', c: 'Uomo la cui fede gli fu contata come giustizia (Giacomo 2:23)' },
-            { n: 5, d: 'H', x: 8, y: 0, w: 'SET', c: 'Figlio di Adamo nato dopo Abele (Genesi 4:25)' },
-            { n: 7, d: 'H', x: 1, y: 2, w: 'BILA', c: 'Serva di Rachele che divenne concubina di Giacobbe (Genesi 30:4)' },
-            { n: 8, d: 'H', x: 6, y: 2, w: 'MALCO', c: 'Uomo a cui Pietro tagliò l\'orecchio destro (Giovanni 18:10)' },
-            { n: 10, d: 'H', x: 0, y: 4, w: 'ISACCO', c: 'Figlio che Abraamo fu pronto a sacrificare (Ebrei 11:17)' },
-            { n: 12, d: 'H', x: 7, y: 4, w: 'EZECHIELE', c: 'Profeta che vide il carro celeste di Geova (Ezechiele 1:1)' },
-            { n: 14, d: 'H', x: 3, y: 6, w: 'GIONATAN', c: 'Figlio di Saul legato a Davide da profonda amicizia (1 Samuele 18:1)' },
-            { n: 16, d: 'H', x: 0, y: 8, w: 'AMOS', c: 'Profeta che era un pecoraio di Tecoa (Amos 1:1)' },
-            { n: 17, d: 'H', x: 6, y: 8, w: 'ESTER', c: 'Moglie di Assuero che salvò il suo popolo (Ester 7:3)' },
-            { n: 1, d: 'V', x: 0, y: 0, w: 'ADAMO', c: 'L\'uomo attraverso il quale la morte si è estesa a tutti (Romani 5:12)' },
-            { n: 2, d: 'V', x: 3, y: 0, w: 'AL', c: '"In principio Dio creò..." (Genesi 1:1)' },
-            { n: 3, d: 'V', x: 6, y: 0, w: 'AMEN', c: 'Parola usata per confermare una preghiera (1 Corinti 14:16)' }
-        ]
-    },
-    {
-        id: 9,
-        parole: [
-            { n: 1, d: 'H', x: 1, y: 0, w: 'ILCHIA', c: 'Sommo sacerdote che trovò il libro della Legge (2 Re 22:8)' },
-            { n: 5, d: 'H', x: 8, y: 0, w: 'AB', c: 'Quinto mese del calendario sacro ebraico (Numeri 33:38)' },
-            { n: 7, d: 'H', x: 0, y: 2, w: 'BARNABA', c: 'Il cui nome significa "figlio di conforto" (Atti 4:36)' },
-            { n: 8, d: 'H', x: 8, y: 2, w: 'AT', c: 'Sigla che indica le Scritture Ebraiche' },
-            { n: 10, d: 'H', x: 3, y: 4, w: 'EZECHIA', c: 'Re che ricevette la guarigione da Geova (2 Re 20:5)' },
-            { n: 12, d: 'H', x: 0, y: 6, w: 'SALOMONE', c: 'Il re più sapiente della terra (1 Re 3:12)' },
-            { n: 14, d: 'H', x: 9, y: 6, w: 'RE', c: 'Davide fu il secondo re d\'Israele' },
-            { n: 16, d: 'H', x: 2, y: 8, w: 'BILA', c: 'Serva che partorì figli a Giacobbe (Genesi 30:4-8)' },
-            { n: 18, d: 'H', x: 0, y: 10, w: 'BETEL', c: 'Città dove Giacobbe eresse un altare (Genesi 35:7)' },
-            { n: 2, d: 'V', x: 2, y: 0, w: 'LEA', c: 'Sposò Giacobbe prima di Rachele (Genesi 29:23)' },
-            { n: 3, d: 'V', x: 4, y: 0, w: 'UR', c: 'Luogo di residenza di Abraamo prima di Haran (Atti 7:2)' },
-            { n: 4, d: 'V', x: 6, y: 0, w: 'GIONA', c: 'Si adirò perché Geova non distrusse Ninive (Giona 4:1)' }
-        ]
-    },
-    {
-    id: 10,
     parole: [
         { n: 1, d: 'H', x: 0, y: 0, w: 'LAMEC', c: 'Sesto discendente di Caino (Genesi 4:18)' },
         { n: 4, d: 'H', x: 6, y: 0, w: 'GOSUE', c: 'Conquistò la città di Gerico (Giosuè 6:20)' },
@@ -259,8 +171,95 @@ const SCHEMI_BIBLICI = [
         { n: 5, d: 'V', x: 10, y: 0, w: 'RE', c: 'Titolo di Davide, Salomone ed Ezechia' },
         { n: 13, d: 'V', x: 5, y: 6, w: 'AT', c: 'Sigla usata per le Scritture Ebraiche' }
     ]
-}
-
+},
+[
+    {
+        id: 11,
+        parole: [
+            { n: 1, d: 'H', x: 0, y: 0, w: 'ZOROBABELE', c: 'Governatore che guidò il ritorno degli esuli (Esdra 3:2)' },
+            { n: 5, d: 'H', x: 0, y: 2, w: 'AGABO', c: 'Profeta che predisse che Paolo sarebbe stato legato (Atti 21:10, 11)' },
+            { n: 6, d: 'H', x: 6, y: 2, w: 'OFIR', c: 'Regione da cui proveniva l\'oro più pregiato (Giobbe 28:16)' },
+            { n: 8, d: 'H', x: 2, y: 4, w: 'SILA', c: 'Compagno di Paolo che cantò lodi in prigione (Atti 16:25)' },
+            { n: 10, d: 'H', x: 0, y: 6, w: 'BILA', c: 'Serva di Rachele che divenne madre di Dan (Genesi 30:4-6)' },
+            { n: 12, d: 'H', x: 5, y: 6, w: 'TIRSO', c: 'Vino nuovo che può essere tolto dalla bocca dei peccatori (Gioele 1:5)' },
+            { n: 14, d: 'H', x: 1, y: 8, w: 'PONTO', c: 'Regione degli ebrei a cui Pietro scrisse (1 Pietro 1:1)' },
+            { n: 15, d: 'H', x: 7, y: 8, w: 'LEA', c: 'Figlia maggiore di Labano e moglie di Giacobbe (Genesi 29:16)' },
+            { n: 16, d: 'H', x: 0, y: 10, w: 'BETEL', c: 'Città dove Abraamo invocò il nome di Geova (Genesi 12:8)' },
+            { n: 1, d: 'V', x: 0, y: 0, w: 'ZACCARIA', c: 'Padre del precursore di Gesù (Luca 1:5)' },
+            { n: 2, d: 'V', x: 3, y: 0, w: 'OBED', c: 'Figlio di Boaz e Rut (Rut 4:17)' },
+            { n: 3, d: 'V', x: 5, y: 0, w: 'RE', c: 'Giosafat lo fu di Giuda (1 Re 22:41)' },
+            { n: 4, d: 'V', x: 8, y: 0, w: 'EBREI', c: 'Scritture che compongono la prima parte della Bibbia' }
+        ]
+    },
+    {
+        id: 12,
+        parole: [
+            { n: 1, d: 'H', x: 1, y: 0, w: 'GOSUE', c: 'Servo di Mosè che non si allontanava dalla tenda (Esodo 33:11)' },
+            { n: 5, d: 'H', x: 0, y: 2, w: 'TARSIS', c: 'Dove Giona voleva andare per fuggire da Geova (Giona 1:3)' },
+            { n: 7, d: 'H', x: 7, y: 2, w: 'ESDRA', c: 'Sacerdote che lesse la Legge al popolo (Neemia 8:1)' },
+            { n: 9, d: 'H', x: 3, y: 4, w: 'ILCHIA', c: 'Sommo sacerdote che trovò il libro della Legge (2 Re 22:8)' },
+            { n: 11, d: 'H', x: 0, y: 6, w: 'LAMEC', c: 'Padre di Noè che visse settecentosettantasette anni (Genesi 5:31)' },
+            { n: 13, d: 'H', x: 6, y: 6, w: 'UR', c: 'Luogo della Caldea lasciato da Tera e la sua famiglia (Genesi 11:31)' },
+            { n: 14, d: 'H', x: 0, y: 8, w: 'IAIRO', c: 'Uomo che supplicò Gesù per la sua figlioletta (Marco 5:22, 23)' },
+            { n: 16, d: 'H', x: 6, y: 8, w: 'ANNA', c: 'Moglie di Elcana che fece un voto a Geova (1 Samuele 1:11)' },
+            { n: 1, d: 'V', x: 1, y: 0, w: 'GIONATAN', c: 'Strinse un patto con Davide perché lo amava (1 Samuele 18:3)' },
+            { n: 2, d: 'V', x: 4, y: 0, w: 'ESTER', c: 'Eroina che denunciò il malvagio Aman (Ester 7:6)' },
+            { n: 3, d: 'V', x: 8, y: 0, w: 'SARA', c: 'Ricevette forza di concepire una discendenza (Ebrei 11:11)' },
+            { n: 4, d: 'V', x: 6, y: 4, w: 'RE', c: 'Davide regnò su Israele per quarant\'anni (1 Re 2:11)' }
+        ]
+    },
+    {
+        id: 13,
+        parole: [
+            { n: 1, d: 'H', x: 0, y: 1, w: 'LICAONIA', c: 'Regione dove Paolo fu scambiato per Ermes (Atti 14:11, 12)' },
+            { n: 4, d: 'H', x: 0, y: 3, w: 'CARIAT', c: 'Inizio del nome della città di Iearim (Giosuè 15:9)' },
+            { n: 6, d: 'H', x: 7, y: 3, w: 'MOAB', c: 'Regione dove morì Mosè (Deuteronomio 34:5)' },
+            { n: 8, d: 'H', x: 2, y: 5, w: 'SINAI', c: 'Monte su cui Israele ricevette i Dieci Comandamenti (Esodo 19:20)' },
+            { n: 10, d: 'H', x: 0, y: 7, w: 'ADAMO', c: 'L\'uomo attraverso il quale la morte è entrata nel mondo (1 Corinti 15:21)' },
+            { n: 12, d: 'H', x: 6, y: 7, w: 'LEA', c: 'Figlia di Labano che partorì sei figli a Giacobbe (Genesi 30:20)' },
+            { n: 14, d: 'H', x: 1, y: 9, w: 'BILA', c: 'Serva di Rachele che partorì Neftali (Genesi 35:25)' },
+            { n: 2, d: 'V', x: 1, y: 0, w: 'ISACCO', c: 'Figlio che Abraamo portò sul monte Moria (Genesi 22:2)' },
+            { n: 3, d: 'V', x: 4, y: 0, w: 'ABRAAMO', c: 'Fu chiamato amico di Geova (Giacomo 2:23)' },
+            { n: 5, d: 'V', x: 8, y: 2, w: 'RE', c: 'Ezechia fu un re fedele di Giuda (2 Re 18:1)' },
+            { n: 7, d: 'V', x: 5, y: 4, w: 'GIONA', c: 'Fu inghiottito da un grande pesce (Giona 1:17)' },
+            { n: 9, d: 'V', x: 3, y: 7, w: 'AI', c: 'Località dove Abraamo piantò la tenda, a est di Betel (Genesi 12:8)' }
+        ]
+    },
+    {
+        id: 14,
+        parole: [
+            { n: 1, d: 'H', x: 0, y: 0, w: 'GERUSALEMME', c: 'Città del grande Re (Matteo 5:35)' },
+            { n: 5, d: 'H', x: 0, y: 2, w: 'SODOMA', c: 'Città che fu distrutta insieme a Gomorra (Genesi 19:24)' },
+            { n: 7, d: 'H', x: 7, y: 2, w: 'NINIVE', c: 'Città a cui Giona doveva annunciare il giudizio (Giona 1:2)' },
+            { n: 9, d: 'H', x: 1, y: 4, w: 'UR', c: 'Dove viveva Abraamo prima di Haran (Atti 7:2)' },
+            { n: 11, d: 'H', x: 5, y: 4, w: 'SAMUELE', c: 'Giudice che unse Davide come re (1 Samuele 16:13)' },
+            { n: 13, d: 'H', x: 0, y: 6, w: 'ILCHIA', c: 'Padre di Eliachim che era sopra la casa (2 Re 18:18)' },
+            { n: 15, d: 'H', x: 7, y: 6, w: 'ANNA', c: 'Profetessa che non si assentava mai dal tempio (Luca 2:36, 37)' },
+            { n: 1, d: 'V', x: 2, y: 0, w: 'GOMORRA', c: 'Città punita con fuoco e zolfo (Genesi 19:24, 25)' },
+            { n: 2, d: 'V', x: 5, y: 0, w: 'SARA', c: 'Moglie di Abraamo che rise all\'annuncio del figlio (Genesi 18:12)' },
+            { n: 3, d: 'V', x: 8, y: 0, w: 'LEA', c: 'Moglie di Giacobbe che ebbe occhi spenti (Genesi 29:17)' },
+            { n: 4, d: 'V', x: 10, y: 0, w: 'RE', c: 'Salomone sedette sul trono di Geova come tale (1 Cronache 29:23)' },
+            { n: 10, d: 'V', x: 3, y: 4, w: 'IAIRO', c: 'Sua figlia di dodici anni fu risuscitata (Luca 8:41, 42)' }
+        ]
+    },
+    {
+        id: 15,
+        parole: [
+            { n: 1, d: 'H', x: 0, y: 0, w: 'GIONATAN', c: 'Figlio di Saul che proteggeva Davide (1 Samuele 19:2)' },
+            { n: 5, d: 'H', x: 0, y: 2, w: 'NABAL', c: 'Uomo stolto che rifiutò cibo ai servitori di Davide (1 Samuele 25:10)' },
+            { n: 7, d: 'H', x: 6, y: 2, w: 'LAMEC', c: 'Discendente di Caino e padre di Tubal-Cain (Genesi 4:22)' },
+            { n: 9, d: 'H', x: 3, y: 4, w: 'BILA', c: 'Diede alla luce figli per Giacobbe (Genesi 30:4)' },
+            { n: 11, d: 'H', x: 0, y: 6, w: 'GOSUE', c: 'Succedette a Mosè alla guida di Israele (Giosuè 1:2)' },
+            { n: 13, d: 'H', x: 7, y: 6, w: 'EDOM', c: 'Nazione che discendeva da Esaù (Genesi 36:9)' }, // Sostituito ADAM con EDOM
+            { n: 15, d: 'H', x: 2, y: 8, w: 'OTNIEL', c: 'Figlio di Kenaz che liberò Israele (Giudici 3:9)' },
+            { n: 17, d: 'H', x: 0, y: 10, w: 'BETEL', c: 'Dove Giacobbe sognò una scala fino al cielo (Genesi 28:12)' },
+            { n: 2, d: 'V', x: 2, y: 0, w: 'OR', c: 'Monte dove spogliarono Aronne delle vesti sacerdotali (Numeri 20:26)' },
+            { n: 3, d: 'V', x: 4, y: 0, w: 'ADAMO', c: 'Dio lo pose nel giardino perché lo coltivasse (Genesi 2:15)' },
+            { n: 4, d: 'V', x: 7, y: 0, w: 'ILCHIA', c: 'Padre del profeta Geremia (Geremia 1:1)' },
+            { n: 6, d: 'V', x: 9, y: 0, w: 'ESTER', c: 'Moglie del re Assuero (Ester 2:17)' }
+        ]
+    }
 ];
+             
 
                 
