@@ -1,4 +1,3 @@
-// schemi.js - CRUCI-BIBBIA (Revisione id1-id5 - TNM 2017)
 const SCHEMI_BIBLICI = [
     {
         id: 1,
@@ -156,6 +155,7 @@ const SCHEMI_BIBLICI = [
             { n: 4, d: 'V', x: 6, y: 0, w: 'GIONA', c: 'Si lamentò per la morte di una pianta di ricino (Giona 4:9)' }
         ]
     },
+    {
         id: 10,
     parole: [
         { n: 1, d: 'H', x: 0, y: 0, w: 'LAMEC', c: 'Sesto discendente di Caino (Genesi 4:18)' },
