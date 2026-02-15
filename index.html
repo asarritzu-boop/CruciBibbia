@@ -56,7 +56,7 @@
         .cell { position: relative; background-color: #ffffff; }
         .cell.black { background-color: var(--black-cell) !important; }
         .cell span { position: absolute; top: 1px; left: 2px; font-size: clamp(9px, 1.8vw, 11px); font-weight: 900; color: #2c3e50; z-index: 10; pointer-events: none; line-height: 1; }
-        .cell input { width: 100%; height: 100%; border: none; background: transparent; text-align: center; font-size: clamp(14px, 4vw, 20px); font-weight: 700; text-transform: uppercase; outline: none; color: #000; padding: 0; }
+        .cell input { width: 100%; height: 100%; border: none; background: transparent; text-align: center; font-size: clamp(14px, 4vw, 20px); font-weight: 700; text-transform: uppercase; outline: none; color: #000; padding: 0; border-radius: 0; }
         .cell input.error { color: #ff3b30 !important; }
 
         button { background: var(--btn-bg); color: var(--btn-text); border: none; padding: 12px 18px; border-radius: var(--ios-radius); font-size: 15px; font-weight: 600; cursor: pointer; transition: transform 0.1s; }
@@ -89,18 +89,10 @@
             .game-column-right button { width: 100%; padding: 8px; font-size: 11px; }
             .portrait-only { display: none; }
             .grid-container { height: 90svh; width: 90svh; }
-            
-            #home-screen .home-content { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 30px; padding: 10px; }
-            #home-screen .home-header { margin-bottom: 0; }
-            #home-screen .home-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: auto; max-width: 500px; }
-            #home-screen button { margin-bottom: 0; padding: 12px 15px; font-size: 14px; }
-            #home-screen button.primary { grid-column: span 2; font-size: 18px; padding: 15px; }
-            .home-icon { width: 70px; height: 70px; }
-            .home-header h1 { font-size: 28px; }
         }
     </style>
 </head>
-<body>
+<body class="theme-papiro">
 
     <header><div id="header-timer">00:00</div></header>
 
@@ -157,47 +149,49 @@
     <script src="schemi.js"></script>
 
     <script>
-        // 1. Definiamo lo schema interno
-        const SCHEMA_INTERNO = [
-            {
-                id: 0,
-                parole: [
-                    { n: 1, d: 'H', x: 0, y: 0, w: 'NAZARETH', c: 'Città d\'infanzia di Gesù' },
-                    { n: 7, d: 'H', x: 0, y: 2, w: 'ALFA', c: 'La prima lettera greca' },
-                    { n: 9, d: 'H', x: 5, y: 2, w: 'DAVIDE', c: 'Il pastore che divenne re' },
-                    { n: 11, d: 'H', x: 0, y: 4, w: 'EDEN', c: 'Il paradiso terrestre' },
-                    { n: 12, d: 'H', x: 6, y: 4, w: 'NOE', c: 'Il patriarca dell\'arca' },
-                    { n: 14, d: 'H', x: 0, y: 6, w: 'ESAÙ', c: 'Vendette la primogenitura' },
-                    { n: 15, d: 'H', x: 5, y: 6, w: 'ADAMO', c: 'Formato dalla polvere' },
-                    { n: 17, d: 'H', x: 0, y: 8, w: 'SARA', c: 'Moglie di Abraamo' },
-                    { n: 18, d: 'H', x: 5, y: 8, w: 'MARTA', c: 'Sorella di Lazzaro' },
-                    { n: 19, d: 'H', x: 0, y: 10, w: 'GIACOBBE', c: 'Lottò con un angelo' },
-                    { n: 1, d: 'V', x: 0, y: 0, w: 'NAIN', c: 'Città dove fu risuscitato un ragazzo' },
-                    { n: 2, d: 'V', x: 2, y: 0, w: 'ZADOK', c: 'Sacerdote fedele' },
-                    { n: 3, d: 'V', x: 4, y: 0, w: 'RE', c: 'Lo fu Salomone' },
-                    { n: 4, d: 'V', x: 6, y: 0, w: 'TITO', c: 'Destinatario di una lettera di Paolo' },
-                    { n: 5, d: 'V', x: 8, y: 0, w: 'HERMON', c: 'Monte famoso per la rugiada' },
-                    { n: 6, d: 'V', x: 10, y: 0, w: 'EVA', c: 'La prima donna' },
-                    { n: 8, d: 'V', x: 1, y: 4, w: 'DEBORA', c: 'Profetessa e giudice' },
-                    { n: 10, d: 'V', x: 9, y: 4, w: 'ENOC', c: 'Camminò con il vero Dio' }
-                ]
-            }
-        ];
-
-        // 2. Uniamo lo schema interno con quelli esterni se presenti
-        let DATABASE_SCHEMI = [...SCHEMA_INTERNO];
-        if (typeof SCHEMI_BIBLICI !== 'undefined') {
-            DATABASE_SCHEMI = DATABASE_SCHEMI.concat(SCHEMI_BIBLICI);
-        }
+        // Logica principale del gioco
+        const SCHEMA_INTERNO = [{
+            id: 0,
+            parole: [
+                { n: 1, d: 'H', x: 0, y: 0, w: 'NAZARETH', c: 'Città d\'infanzia di Gesù' },
+                { n: 7, d: 'H', x: 0, y: 2, w: 'ALFA', c: 'La prima lettera greca' },
+                { n: 9, d: 'H', x: 5, y: 2, w: 'DAVIDE', c: 'Il pastore che divenne re' },
+                { n: 11, d: 'H', x: 0, y: 4, w: 'EDEN', c: 'Il paradiso terrestre' },
+                { n: 12, d: 'H', x: 6, y: 4, w: 'NOE', c: 'Il patriarca dell\'arca' },
+                { n: 14, d: 'H', x: 0, y: 6, w: 'ESAÙ', c: 'Vendette la primogenitura' },
+                { n: 15, d: 'H', x: 5, y: 6, w: 'ADAMO', c: 'Formato dalla polvere' },
+                { n: 17, d: 'H', x: 0, y: 8, w: 'SARA', c: 'Moglie di Abraamo' },
+                { n: 18, d: 'H', x: 5, y: 8, w: 'MARTA', c: 'Sorella di Lazzaro' },
+                { n: 19, d: 'H', x: 0, y: 10, w: 'GIACOBBE', c: 'Lottò con un angelo' },
+                { n: 1, d: 'V', x: 0, y: 0, w: 'NAIN', c: 'Città dove fu risuscitato un ragazzo' },
+                { n: 2, d: 'V', x: 2, y: 0, w: 'ZADOK', c: 'Sacerdote fedele' },
+                { n: 3, d: 'V', x: 4, y: 0, w: 'RE', c: 'Lo fu Salomone' },
+                { n: 4, d: 'V', x: 6, y: 0, w: 'TITO', c: 'Destinatario di una lettera di Paolo' },
+                { n: 5, d: 'V', x: 8, y: 0, w: 'HERMON', c: 'Monte famoso per la rugiada' },
+                { n: 6, d: 'V', x: 10, y: 0, w: 'EVA', c: 'La prima donna' },
+                { n: 8, d: 'V', x: 1, y: 4, w: 'DEBORA', c: 'Profetessa e giudice' },
+                { n: 10, d: 'V', x: 9, y: 4, w: 'ENOC', c: 'Camminò con il vero Dio' }
+            ]
+        }];
 
         let seconds = 0, timerInterval, giocoAttivo = false, schemaCorrente = null;
         let mappaSoluzione = {}; 
+
+        function ottieniDatabase() {
+            let db = [...SCHEMA_INTERNO];
+            if (typeof SCHEMI_BIBLICI !== 'undefined' && Array.isArray(SCHEMI_BIBLICI)) {
+                db = db.concat(SCHEMI_BIBLICI);
+            }
+            return db;
+        }
 
         window.onload = () => {
             caricaTemaSalvato();
             const urlParams = new URLSearchParams(window.location.search);
             const schemaId = urlParams.get('schema');
-            if (schemaId) avviaCruciverba(parseInt(schemaId));
+            if (schemaId !== null) {
+                avviaCruciverba(parseInt(schemaId));
+            }
         };
 
         function caricaTemaSalvato() {
@@ -216,16 +210,16 @@
         }
 
         function avviaCruciverba(idForzato = null) {
+            const db = ottieniDatabase();
             giocoAttivo = true;
             document.getElementById('home-screen').style.display = 'none';
             document.getElementById('game-area').style.display = 'flex';
             document.body.classList.add('in-game');
             
-            // Logica di selezione schema
             if (idForzato !== null) {
-                schemaCorrente = DATABASE_SCHEMI.find(s => s.id === idForzato) || DATABASE_SCHEMI[0];
+                schemaCorrente = db.find(s => s.id === idForzato) || db[0];
             } else {
-                schemaCorrente = DATABASE_SCHEMI[Math.floor(Math.random() * DATABASE_SCHEMI.length)];
+                schemaCorrente = db[Math.floor(Math.random() * db.length)];
             }
             
             mappaSoluzione = {};
@@ -269,7 +263,6 @@
                 for(let x=0; x<11; x++) {
                     const coordinata = `${x},${y}`;
                     const c = document.createElement('div');
-                    
                     if(celleOccupate[coordinata]) {
                         c.className = 'cell';
                         if(numeriCelle[coordinata]) {
@@ -281,7 +274,7 @@
                         input.maxLength = 1;
                         input.dataset.coords = coordinata;
                         input.setAttribute('autocomplete', 'off');
-                        input.addEventListener('input', (e) => gestisciInput(e));
+                        input.addEventListener('input', gestisciInput);
                         c.appendChild(input);
                     } else {
                         c.className = 'cell black';
@@ -295,11 +288,9 @@
             const input = e.target;
             input.value = input.value.toUpperCase();
             input.classList.remove('error');
-
             const tuttiInput = document.querySelectorAll('.cell input');
             let pieno = true;
             tuttiInput.forEach(i => { if(i.value === '') pieno = false; });
-
             if(pieno) verificaVittoria();
         }
 
@@ -334,54 +325,24 @@
         async function condividi(tipo) {
             const baseUrl = window.location.origin + window.location.pathname;
             const shareUrl = tipo === 'Sfida' ? `${baseUrl}?schema=${schemaCorrente.id}` : baseUrl;
-            const shareText = tipo === 'Sfida' 
-                ? `Ti sfido al mio stesso schema. Vediamo chi fa prima!` 
-                : "Prova questo Cruciverba Biblico! È bellissimo.";
-
+            const shareText = tipo === 'Sfida' ? `Ti sfido allo stesso schema!` : "Prova Cruci-Bibbia!";
             if (navigator.share) {
-                try {
-                    await navigator.share({
-                        title: 'CRUCI-BIBBIA',
-                        text: shareText,
-                        url: shareUrl
-                    });
-                } catch (err) {
-                    console.log("Condivisione annullata");
-                }
+                try { await navigator.share({ title: 'CRUCI-BIBBIA', text: shareText, url: shareUrl }); } 
+                catch (err) { console.log("Annullato"); }
             } else {
-                const tempInput = document.createElement("input");
-                document.body.appendChild(tempInput);
-                tempInput.value = shareUrl;
-                tempInput.select();
-                document.execCommand("copy");
-                document.body.removeChild(tempInput);
-                alert("Link copiato negli appunti: " + shareUrl);
+                const temp = document.createElement("input");
+                document.body.appendChild(temp); temp.value = shareUrl; temp.select();
+                document.execCommand("copy"); document.body.removeChild(temp);
+                alert("Link copiato!");
             }
         }
-
-        function toggleFullScreen() {
-            if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
-            else if (document.exitFullscreen) document.exitFullscreen();
-        }
-
-        let lastTap = 0;
-        document.addEventListener('touchend', e => {
-            const now = Date.now();
-            if (now - lastTap < 300 && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') toggleFullScreen();
-            lastTap = now;
-        });
-
-        document.addEventListener('keydown', e => {
-            if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'BUTTON') {
-                e.preventDefault(); toggleFullScreen();
-            }
-        });
 
         function toggleTemi() {
             const p = document.getElementById('theme-panel'), o = document.getElementById('overlay');
             const isVisible = p.style.display === 'block';
             p.style.display = isVisible ? 'none' : 'block'; o.style.display = isVisible ? 'none' : 'block';
         }
+
         function confermaReset() { if(confirm("Cancellare tutto?")) document.querySelectorAll('.cell input').forEach(i => { i.value = ''; i.classList.remove('error'); }); }
         function tornaHome() { if(confirm("Tornare alla home?")) location.href = window.location.pathname; }
         function startTimer() { clearInterval(timerInterval); timerInterval = setInterval(() => { seconds++; aggiornaTimer(); }, 1000); }
