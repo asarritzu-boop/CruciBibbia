@@ -172,7 +172,6 @@ const SCHEMI_BIBLICI = [
         { n: 13, d: 'V', x: 5, y: 6, w: 'AT', c: 'Sigla usata per le Scritture Ebraiche' }
     ]
 },
-[
     {
         id: 11,
         parole: [
