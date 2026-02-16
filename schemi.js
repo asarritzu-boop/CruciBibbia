@@ -187,5 +187,37 @@ const SCHEMI_BIBLICI = [
                 c: "Qualita di una vita che non puo morire o corrompersi. (1 Corinti 15:53)"
             }
         ]
+    },
+    {
+        id: 1,
+        parole: [
+
+            { n: 1, d: 'V', x: 1, y: 0, w: 'DAN', c: 'Citta al confine settentrionale d\'Israele. (Giudici 20:1)' },
+            { n: 2, d: 'V', x: 5, y: 0, w: 'MARIA', c: 'Nome della madre di Gesu e di altre donne fedeli. (Luca 1:27)' },
+            { n: 3, d: 'H', x: 7, y: 0, w: 'LEA', c: 'Moglie di Giacobbe e madre di sei delle dodici tribu. (Genesi 29:23)' },
+            { n: 4, d: 'H', x: 0, y: 1, w: 'PANE', c: 'Alimento base, spesso usato come simbolo di sostentamento. (Matteo 6:11)' },
+            { n: 6, d: 'H', x: 3, y: 2, w: 'MIRACOLO', c: 'Atto potente che supera le leggi naturali conosciute. (Atti 2:22)' },
+            { n: 9, d: 'H', x: 3, y: 3, w: 'ELIU', c: 'Giovane che consiglio Giobbe e i suoi amici. (Giobbe 32:2)' },
+            { n: 10, d: 'H', x: 0, y: 4, w: 'GAZA', c: 'Citta filistea dove Sansone fu imprigionato. (Giudici 16:21)' },
+            { n: 13, d: 'H', x: 7, y: 4, w: 'AGAG', c: 'Re degli amalechiti risparmiato da Saul. (1 Samuele 15:8)' },
+            { n: 17, d: 'H', x: 0, y: 5, w: 'FIRMA', c: 'Marchio o sottoscrizione a convalida di un documento. (Giobbe 31:35)' },
+            { n: 18, d: 'H', x: 6, y: 5, w: 'MITRA', c: 'Copricapo cerimoniale del sommo sacerdote. (Esodo 28:4)' },
+            { n: 19, d: 'H', x: 0, y: 6, w: 'ZEUS', c: 'Capo degli dei greci, confuso con Barnaba. (Atti 14:12)' },
+            { n: 20, d: 'V', x: 5, y: 6, w: 'ACCAD', c: 'Una delle citta fondate da Nimrod. (Genesi 10:10)' },
+            { n: 21, d: 'H', x: 7, y: 6, w: 'SEME', c: 'Discendenza o prole; riferito anche al Messia. (Genesi 3:15)' },
+            { n: 22, d: 'H', x: 0, y: 7, w: 'AI', c: 'Citta conquistata da Giosue dopo una sconfitta. (Giosue 7:2)' },
+            { n: 23, d: 'H', x: 3, y: 7, w: 'LUCA', c: 'Medico e scrittore di un Vangelo e degli Atti. (Colossesi 4:14)' },
+            { n: 24, d: 'V', x: 6, y: 7, w: 'ADES', c: 'Soggiorno dei morti, corrispondente all\'ebraico Sceol. (Atti 2:31)' },
+            { n: 25, d: 'H', x: 8, y: 7, w: 'VIA', c: 'Termine usato per indicare il modo di vivere cristiano. (Atti 9:2)' },
+            { n: 26, d: 'V', x: 2, y: 8, w: 'ASA', c: 'Re di Giuda noto per la sua lotta all\'idolatria. (1 Re 15:9)' },
+            { n: 28, d: 'H', x: 8, y: 8, w: 'WOL', c: 'Acronimo per la biblioteca online dei testimoni di Geova. (Glossario)' },
+            { n: 29, d: 'H', x: 0, y: 9, w: 'SUSA', c: 'Capitale dell\'impero persiano ai tempi di Ester. (Ester 2:8)' },
+            { n: 33, d: 'H', x: 8, y: 9, w: 'ORO', c: 'Metallo prezioso usato nel tabernacolo e nel tempio. (Esodo 25:11)' },
+            { n: 34, d: 'H', x: 1, y: 10, w: 'DAN', c: 'Citta al confine settentrionale d\'Israele. (Giudici 20:1)' },
+            { n: 36, d: 'H', x: 8, y: 10, w: 'UR', c: 'Citta dei caldei da cui parti Abraamo. (Genesi 11:31)' }
+        ]
     }
 ];
+
+
+    
