@@ -1,166 +1,190 @@
 const SCHEMI_BIBLICI = [
     {
-        "id": 1,
-        "parole": [
+        id: 1771278161066,
+        parole: [
             {
-                "n": 1,
-                "d": "H",
-                "x": 0,
-                "y": 0,
-                "w": "GERUSALEMME",
-                "c": "Citta santa e sede del tempio di Geova. (2 Samuele 5:5)"
+                n: 1,
+                d: "H",
+                x: 0,
+                y: 0,
+                w: "GERUSALEMME",
+                c: "Citta santa e sede del tempio di Geova. (2 Samuele 5:5)"
             },
             {
-                "n": 1,
-                "d": "V",
-                "x": 0,
-                "y": 0,
-                "w": "GENEALOGIA",
-                "c": "Elenco degli antenati di una persona o famiglia. (Matteo 1:1)"
+                n: 1,
+                d: "V",
+                x: 0,
+                y: 0,
+                w: "GRECO",
+                c: "Lingua in cui furono scritti i Vangeli e le Lettere. (Giovanni 19:20)"
             },
             {
-                "n": 2,
-                "d": "V",
-                "x": 2,
-                "y": 0,
-                "w": "RIVELAZIONE",
-                "c": "Manifestazione di verita nascoste da parte di Dio. (Rivelazione 1:1)"
+                n: 3,
+                d: "V",
+                x: 3,
+                y: 0,
+                w: "UR",
+                c: "Citta dei caldei da cui parti Abraamo. (Genesi 11:31)"
             },
             {
-                "n": 3,
-                "d": "V",
-                "x": 4,
-                "y": 0,
-                "w": "SABATO",
-                "c": "Giorno di riposo prescritto dalla Legge. (Esodo 20:8)"
+                n: 9,
+                d: "V",
+                x: 10,
+                y: 0,
+                w: "EBRON",
+                c: "Citta dove Davide regno per sette anni. (2 Samuele 2:11)"
             },
             {
-                "n": 4,
-                "d": "V",
-                "x": 5,
-                "y": 0,
-                "w": "ABNER",
-                "c": "Capo dell'esercito di Saul. (1 Samuele 14:50)"
+                n: 10,
+                d: "H",
+                x: 2,
+                y: 1,
+                w: "ORO",
+                c: "Metallo prezioso usato nel tabernacolo e nel tempio. (Esodo 25:11)"
             },
             {
-                "n": 5,
-                "d": "V",
-                "x": 6,
-                "y": 0,
-                "w": "LINO",
-                "c": "Fibra usata per le vesti dei sacerdoti. (Esodo 28:39)"
+                n: 11,
+                d: "H",
+                x: 6,
+                y: 1,
+                w: "CALEB",
+                c: "Esploratore che porto un rapporto positivo su Canaan. (Numeri 13:6)"
             },
             {
-                "n": 6,
-                "d": "V",
-                "x": 7,
-                "y": 0,
-                "w": "ELAM",
-                "c": "Regione a est di Babilonia, discendenti di Sem. (Genesi 10:22)"
+                n: 12,
+                d: "H",
+                x: 0,
+                y: 2,
+                w: "ELI",
+                c: "Sommo sacerdote e giudice che educo Samuele. (1 Samuele 1:9)"
             },
             {
-                "n": 10,
-                "d": "H",
-                "x": 4,
-                "y": 1,
-                "w": "ABILENE",
-                "c": "Piccola provincia della Siria citata da Luca. (Luca 3:1)"
+                n: 13,
+                d: "V",
+                x: 1,
+                y: 2,
+                w: "LIBIA",
+                c: "Regione dell'Africa. (Atti 2:10)"
             },
             {
-                "n": 12,
-                "d": "V",
-                "x": 1,
-                "y": 2,
-                "w": "ALABASTRO",
-                "c": "Vasetto di pietra usato per conservare profumi. (Marco 14:3)"
+                n: 14,
+                d: "H",
+                x: 4,
+                y: 2,
+                w: "FIRMA",
+                c: "Marchio o sottoscrizione a convalida di un documento. (Giobbe 31:35)"
             },
             {
-                "n": 16,
-                "d": "V",
-                "x": 8,
-                "y": 3,
-                "w": "ANNA",
-                "c": "Profetessa ottantenne presente al tempio. (Luca 2:36)"
+                n: 16,
+                d: "H",
+                x: 3,
+                y: 3,
+                w: "UR",
+                c: "Citta dei caldei da cui parti Abraamo. (Genesi 11:31)"
             },
             {
-                "n": 17,
-                "d": "V",
-                "x": 10,
-                "y": 3,
-                "w": "CEFA",
-                "c": "Nome aramaico dato a Simon Pietro. (Giovanni 1:42)"
+                n: 17,
+                d: "H",
+                x: 6,
+                y: 3,
+                w: "RE",
+                c: "Sovrano che esercita l'autorita su un popolo. (1 Samuele 8:5)"
             },
             {
-                "n": 20,
-                "d": "H",
-                "x": 8,
-                "y": 4,
-                "w": "NOE",
-                "c": "Costruttore dell'arca e sopravvissuto al Diluvio. (Genesi 6:8)"
+                n: 18,
+                d: "V",
+                x: 9,
+                y: 3,
+                w: "WOL",
+                c: "Acronimo per la biblioteca online dei testimoni di Geova. (Glossario)"
             },
             {
-                "n": 22,
-                "d": "V",
-                "x": 6,
-                "y": 5,
-                "w": "BALAAM",
-                "c": "Profeta che cerco di maledire Israele per denaro. (Numeri 22:5)"
+                n: 20,
+                d: "V",
+                x: 5,
+                y: 4,
+                w: "MOAB",
+                c: "Altopiano a est del Mar Morto. (Genesi 19:37)"
             },
             {
-                "n": 23,
-                "d": "V",
-                "x": 7,
-                "y": 5,
-                "w": "SCRIBA",
-                "c": "Copiaista ed esperto della Legge. (Esdra 7:6)"
+                n: 21,
+                d: "H",
+                x: 7,
+                y: 4,
+                w: "SION",
+                c: "Nome della collina di Gerusalemme e della citta stessa. (Salmo 2:6)"
             },
             {
-                "n": 25,
-                "d": "H",
-                "x": 6,
-                "y": 6,
-                "w": "ACAIA",
-                "c": "Provincia romana della Grecia meridionale. (Atti 18:12)"
+                n: 22,
+                d: "H",
+                x: 3,
+                y: 5,
+                w: "EFOD",
+                c: "Grembiule sacerdotale su cui era posto il pettorale. (Esodo 28:6)"
             },
             {
-                "n": 27,
-                "d": "V",
-                "x": 4,
-                "y": 7,
-                "w": "ADES",
-                "c": "Soggiorno dei morti, corrispondente all'ebraico Sceol. (Atti 2:31)"
+                n: 25,
+                d: "H",
+                x: 0,
+                y: 6,
+                w: "MARANATA",
+                c: "Espressione che significa il Signore viene. (1 Corinti 16:22)"
             },
             {
-                "n": 30,
-                "d": "H",
-                "x": 6,
-                "y": 8,
-                "w": "AI",
-                "c": "Citta conquistata da Giosue dopo una sconfitta. (Giosue 7:2)"
+                n: 27,
+                d: "V",
+                x: 10,
+                y: 6,
+                w: "ARETA",
+                c: "Re dei nabatei citato da Paolo. (2 Corinti 11:32)"
             },
             {
-                "n": 31,
-                "d": "H",
-                "x": 9,
-                "y": 8,
-                "w": "UR",
-                "c": "Citta dei caldei da cui parti Abraamo. (Genesi 11:31)"
+                n: 28,
+                d: "H",
+                x: 4,
+                y: 7,
+                w: "ABIATAR",
+                c: "Sommo sacerdote e figlio di Ahimelec. (1 Samuele 22:20)"
             },
             {
-                "n": 34,
-                "d": "H",
-                "x": 6,
-                "y": 9,
-                "w": "ABDON",
-                "c": "Uno dei giudici che governo Israele per otto anni. (Giudici 12:13)"
+                n: 31,
+                d: "H",
+                x: 0,
+                y: 8,
+                w: "ABDON",
+                c: "Uno dei giudici che governo Israele per otto anni. (Giudici 12:13)"
             },
             {
-                "n": 37,
-                "d": "H",
-                "x": 4,
-                "y": 10,
-                "w": "SAMARIA",
-                "c": "Regione centrale. (Giovanni 4:4)"
+                n: 35,
+                d: "H",
+                x: 6,
+                y: 8,
+                w: "IANNE",
+                c: "Uno dei maghi d'Egitto che si oppose a Mose. (2 Timoteo 3:8)"
+            },
+            {
+                n: 36,
+                d: "H",
+                x: 0,
+                y: 9,
+                w: "NEBO",
+                c: "Monte da cui Mose vide la Terra Promessa. (Deuteronomio 34:1)"
+            },
+            {
+                n: 37,
+                d: "H",
+                x: 8,
+                y: 9,
+                w: "GAT",
+                c: "Citta d'origine del gigante Golia. (1 Samuele 17:4)"
+            },
+            {
+                n: 38,
+                d: "H",
+                x: 0,
+                y: 10,
+                w: "IMMORTALITA",
+                c: "Qualita di una vita che non puo morire o corrompersi. (1 Corinti 15:53)"
             }
         ]
     }
