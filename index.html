@@ -161,26 +161,26 @@
         // Logica principale del gioco
         const SCHEMA_INTERNO = [{
             id: 0,
-            parole: [
-                { n: 1, d: 'H', x: 0, y: 0, w: 'NAZARETH', c: 'Città d\'infanzia di Gesù' },
-                { n: 7, d: 'H', x: 0, y: 2, w: 'ALFA', c: 'La prima lettera greca' },
-                { n: 9, d: 'H', x: 5, y: 2, w: 'DAVIDE', c: 'Il pastore che divenne re' },
-                { n: 11, d: 'H', x: 0, y: 4, w: 'EDEN', c: 'Il paradiso terrestre' },
-                { n: 12, d: 'H', x: 6, y: 4, w: 'NOE', c: 'Il patriarca dell\'arca' },
-                { n: 14, d: 'H', x: 0, y: 6, w: 'ESAÙ', c: 'Vendette la primogenitura' },
-                { n: 15, d: 'H', x: 5, y: 6, w: 'ADAMO', c: 'Formato dalla polvere' },
-                { n: 17, d: 'H', x: 0, y: 8, w: 'SARA', c: 'Moglie di Abraamo' },
-                { n: 18, d: 'H', x: 5, y: 8, w: 'MARTA', c: 'Sorella di Lazzaro' },
-                { n: 19, d: 'H', x: 0, y: 10, w: 'GIACOBBE', c: 'Lottò con un angelo' },
-                { n: 1, d: 'V', x: 0, y: 0, w: 'NAIN', c: 'Città dove fu risuscitato un ragazzo' },
-                { n: 2, d: 'V', x: 2, y: 0, w: 'ZADOK', c: 'Sacerdote fedele' },
-                { n: 3, d: 'V', x: 4, y: 0, w: 'RE', c: 'Lo fu Salomone' },
-                { n: 4, d: 'V', x: 6, y: 0, w: 'TITO', c: 'Destinatario di una lettera di Paolo' },
-                { n: 5, d: 'V', x: 8, y: 0, w: 'HERMON', c: 'Monte famoso per la rugiada' },
-                { n: 6, d: 'V', x: 10, y: 0, w: 'EVA', c: 'La prima donna' },
-                { n: 8, d: 'V', x: 1, y: 4, w: 'DEBORA', c: 'Profetessa e giudice' },
-                { n: 10, d: 'V', x: 9, y: 4, w: 'ENOC', c: 'Camminò con il vero Dio' }
-            ]
+        parole: [
+
+            { n: 1, d: 'H', x: 1, y: 0, w: 'GIUSTIZIA', c: 'Qualita di cio che e retto secondo le norme divine. (Matteo 6:33)' },
+            { n: 5, d: 'V', x: 5, y: 0, w: 'TARSO', c: 'Citta natale dell\'apostolo Paolo in Cilicia. (Atti 9:11)' },
+            { n: 9, d: 'V', x: 0, y: 1, w: 'CHERUBINI', c: 'Angeli di alto rango che sostengono il trono di Dio. (Genesi 3:24)' },
+            { n: 10, d: 'H', x: 2, y: 1, w: 'FARAONE', c: 'Titolo regale dei sovrani d\'Egitto. (Esodo 5:1)' },
+            { n: 11, d: 'V', x: 10, y: 1, w: 'PARACLITO', c: 'Soccorritore o consolatore; riferito allo spirito. (Giovanni 14:16)' },
+            { n: 13, d: 'V', x: 1, y: 2, w: 'HISSOPO', c: 'Pianta usata nei riti di purificazione. (Esodo 12:22)' },
+            { n: 15, d: 'V', x: 2, y: 3, w: 'GIUDA', c: 'Quarto figlio di Giacobbe o nome di una tribu e regno. (Genesi 29:35)' },
+            { n: 16, d: 'V', x: 8, y: 3, w: 'SIRIA', c: 'Regione a nord. (Matteo 4:24)' },
+            { n: 18, d: 'V', x: 3, y: 4, w: 'ORO', c: 'Metallo prezioso usato nel tabernacolo e nel tempio. (Esodo 25:11)' },
+            { n: 19, d: 'H', x: 7, y: 4, w: 'DINA', c: 'Figlia di Giacobbe e Lia. (Genesi 30:21)' },
+            { n: 19, d: 'V', x: 7, y: 4, w: 'DAN', c: 'Citta al confine settentrionale d\'Israele. (Giudici 20:1)' },
+            { n: 21, d: 'H', x: 0, y: 5, w: 'USURA', c: 'Prestito di denaro a interessi esorbitanti. (Esodo 22:25)' },
+            { n: 22, d: 'H', x: 6, y: 5, w: 'BARUC', c: 'Segretario e amico del profeta Geremia. (Geremia 32:12)' },
+            { n: 24, d: 'V', x: 5, y: 6, w: 'TABOR', c: 'Monte della Galilea. (Giudici 4:6)' },
+            { n: 27, d: 'V', x: 4, y: 7, w: 'ALOE', c: 'Pianta aromatica usata per profumare i letti. (Proverbi 7:17)' },
+            { n: 28, d: 'V', x: 6, y: 7, w: 'EFOD', c: 'Grembiule sacerdotale su cui era posto il pettorale. (Esodo 28:6)' },
+            { n: 32, d: 'H', x: 1, y: 10, w: 'SACERDOTE', c: 'Chi rappresenta gli uomini davanti a Dio. (Ebrei 5:1)' }
+        ]
         }];
 
         let seconds = 0, timerInterval, giocoAttivo = false, schemaCorrente = null;
