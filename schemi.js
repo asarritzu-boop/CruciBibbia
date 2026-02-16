@@ -216,8 +216,37 @@ const SCHEMI_BIBLICI = [
             { n: 34, d: 'H', x: 1, y: 10, w: 'DAN', c: 'Citta al confine settentrionale d\'Israele. (Giudici 20:1)' },
             { n: 36, d: 'H', x: 8, y: 10, w: 'UR', c: 'Citta dei caldei da cui parti Abraamo. (Genesi 11:31)' }
         ]
+    },
+    {
+        id: 2,
+        parole: [
+
+            { n: 1, d: 'H', x: 0, y: 0, w: 'GLOSSOLALIA', c: 'Dono miracoloso di parlare in lingue diverse. (1 Corinti 12:10)' },
+            { n: 1, d: 'V', x: 0, y: 0, w: 'GOG', c: 'Nome simbolico del nemico che attacca il popolo di Dio. (Ezechiele 38:2)' },
+            { n: 2, d: 'V', x: 1, y: 0, w: 'LEA', c: 'Moglie di Giacobbe e madre di sei delle dodici tribu. (Genesi 29:23)' },
+            { n: 11, d: 'H', x: 3, y: 1, w: 'CRETA', c: 'Isola del Mediterraneo visitata da Paolo. (Atti 27:7)' },
+            { n: 12, d: 'H', x: 9, y: 1, w: 'UR', c: 'Citta dei caldei da cui parti Abraamo. (Genesi 11:31)' },
+            { n: 13, d: 'H', x: 0, y: 2, w: 'GALAAD', c: 'Regione montuosa nota per il suo balsamo. (Geremia 8:22)' },
+            { n: 15, d: 'H', x: 7, y: 2, w: 'ROMA', c: 'Capitale dell\'impero e sesta potenza mondiale. (Atti 18:2)' },
+            { n: 16, d: 'H', x: 4, y: 3, w: 'PALO', c: 'Vedi Strumento di tortura; legno usato per le esecuzioni. (Matteo 27:32)' },
+            { n: 17, d: 'V', x: 5, y: 3, w: 'ANACHITI', c: 'Popolo di alta statura che spavento le spie. (Numeri 13:22)' },
+            { n: 18, d: 'H', x: 9, y: 3, w: 'RE', c: 'Sovrano che esercita l\'autorita su un popolo. (1 Samuele 8:5)' },
+            { n: 19, d: 'H', x: 0, y: 4, w: 'CHISON', c: 'Torrente che travolse l\'esercito di Sisera. (Giudici 5:21)' },
+            { n: 19, d: 'V', x: 0, y: 4, w: 'CARMELO', c: 'Promontorio dove Elia sfido i profeti di Baal. (1 Re 18:19)' },
+            { n: 23, d: 'H', x: 8, y: 4, w: 'GAT', c: 'Citta d\'origine del gigante Golia. (1 Samuele 17:4)' },
+            { n: 23, d: 'V', x: 8, y: 4, w: 'GOLGOTA', c: 'Luogo del teschio, dove Gesu fu messo al palo. (Matteo 27:33)' },
+            { n: 24, d: 'H', x: 0, y: 5, w: 'ABERRAZIONE', c: 'Pratica o idolo detestabile agli occhi di Dio. (Geremia 7:30)' },
+            { n: 25, d: 'H', x: 0, y: 7, w: 'MOAB', c: 'Altopiano a est del Mar Morto. (Genesi 19:37)' },
+            { n: 26, d: 'V', x: 1, y: 7, w: 'OREB', c: 'Altro nome del monte Sinai. (Esodo 3:1)' },
+            { n: 27, d: 'V', x: 2, y: 7, w: 'ASIA', c: 'Provincia romana dove si trovavano le sette congregazioni. (Rivelazione 1:4)' },
+            { n: 28, d: 'V', x: 3, y: 7, w: 'BOAZ', c: 'Uomo di Betlemme che sposo Rut. (Rut 2:1)' },
+            { n: 29, d: 'H', x: 7, y: 7, w: 'AGAG', c: 'Re degli amalechiti risparmiato da Saul. (1 Samuele 15:8)' },
+            { n: 29, d: 'V', x: 7, y: 7, w: 'ANNA', c: 'Profetessa ottantenne presente al tempio. (Luca 2:36)' },
+            { n: 30, d: 'V', x: 9, y: 7, w: 'AMEN', c: 'Significa cosi sia o sicuramente. (Deuteronomio 27:15)' },
+            { n: 31, d: 'V', x: 10, y: 7, w: 'GESU', c: 'Nome del Figlio di Dio, il Messia promesso. (Matteo 1:21)' },
+            { n: 33, d: 'H', x: 7, y: 8, w: 'NOME', c: 'Designazione che identifica la persona o Dio. (Esodo 3:15)' }
+        ]
     }
 ];
-
 
     
