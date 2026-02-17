@@ -248,7 +248,7 @@ const SCHEMI_BIBLICI = [
         ]
     },
     {
-        id: 3,
+        id: 1,
         parole: [
 
             { n: 1, d: 'H', x: 0, y: 0, w: 'BEGA', c: 'Litigio' },
@@ -261,7 +261,6 @@ const SCHEMI_BIBLICI = [
             { n: 10, d: 'H', x: 4, y: 1, w: 'ARARAT', c: 'Monti su cui si poso l\'arca dopo il Diluvio. (Genesi 8:4)' },
             { n: 11, d: 'H', x: 0, y: 2, w: 'NORMA', c: 'Regola di condotta stabilita da Dio. (Salmo 119:105)' },
             { n: 12, d: 'H', x: 6, y: 2, w: 'EGLON', c: 'Re di Moab che oppresse Israele. (Giudici 3:12)' },
-            { n: 0, d: 'V', x: 10, y: 2, w: 'NILO', c: 'Fiume principale dell\'Egitto. (Esodo 7:17)' },
             { n: 13, d: 'H', x: 4, y: 3, w: 'DECADE', c: 'Periodo di dieci giorni o anni. (Glossario)' },
             { n: 15, d: 'H', x: 0, y: 4, w: 'DISCEPOLO', c: 'Chi impara e segue gli insegnamenti di un maestro. (Matteo 28:19)' },
             { n: 16, d: 'V', x: 10, y: 4, w: 'IO', c: 'PerchÃ©...possa rispondere (Per 27:11)' },
