@@ -246,6 +246,40 @@ const SCHEMI_BIBLICI = [
             { n: 31, d: 'V', x: 10, y: 7, w: 'GESU', c: 'Nome del Figlio di Dio, il Messia promesso. (Matteo 1:21)' },
             { n: 33, d: 'H', x: 7, y: 8, w: 'NOME', c: 'Designazione che identifica la persona o Dio. (Esodo 3:15)' }
         ]
+    },
+    {
+        id: 3,
+        parole: [
+
+            { n: 1, d: 'H', x: 0, y: 0, w: 'BEGA', c: 'Litigio' },
+            { n: 1, d: 'V', x: 0, y: 0, w: 'BENEDIZIONE', c: 'Favore divino o lode rivolta a Dio. (Numeri 6:24)' },
+            { n: 2, d: 'V', x: 1, y: 0, w: 'EDOM', c: 'Regione montuosa a sud del Mar Morto. (Genesi 36:8)' },
+            { n: 3, d: 'V', x: 2, y: 0, w: 'GERUSALEMME', c: 'Citta santa e sede del tempio di Geova. (2 Samuele 5:5)' },
+            { n: 4, d: 'H', x: 5, y: 0, w: 'AMASA', c: 'Nipote di Davide e capo dell\'esercito di Assalonne. (2 Samuele 17:25)' },
+            { n: 6, d: 'H', x: 7, y: 0, w: 'ASA', c: 'Re di Giuda noto per la sua lotta all\'idolatria. (1 Re 15:9)' },
+            { n: 7, d: 'V', x: 8, y: 0, w: 'SALDO', c: 'Stabile e incrollabile nella fede. (1 Corinti 15:58)' },
+            { n: 10, d: 'H', x: 4, y: 1, w: 'ARARAT', c: 'Monti su cui si poso l\'arca dopo il Diluvio. (Genesi 8:4)' },
+            { n: 11, d: 'H', x: 0, y: 2, w: 'NORMA', c: 'Regola di condotta stabilita da Dio. (Salmo 119:105)' },
+            { n: 12, d: 'H', x: 6, y: 2, w: 'EGLON', c: 'Re di Moab che oppresse Israele. (Giudici 3:12)' },
+            { n: 0, d: 'V', x: 10, y: 2, w: 'NILO', c: 'Fiume principale dell\'Egitto. (Esodo 7:17)' },
+            { n: 14, d: 'H', x: 4, y: 3, w: 'DECADE', c: 'Periodo di dieci giorni o anni. (Glossario)' },
+            { n: 0, d: 'H', x: 0, y: 4, w: 'DISCEPOLO', c: 'Chi impara e segue gli insegnamenti di un maestro. (Matteo 28:19)' },
+            { n: 17, d: 'V', x: 10, y: 4, w: 'IO', c: 'PerchÃ©...possa rispondere (Per 27:11)' },
+            { n: 18, d: 'H', x: 4, y: 5, w: 'NEBO', c: 'Monte da cui Mose vide la Terra Promessa. (Deuteronomio 34:1)' },
+            { n: 18, d: 'V', x: 4, y: 5, w: 'NOE', c: 'Costruttore dell\'arca e sopravvissuto al Diluvio. (Genesi 6:8)' },
+            { n: 19, d: 'H', x: 9, y: 5, w: 'CO', c: 'Presso (suffisso)' },
+            { n: 19, d: 'V', x: 9, y: 5, w: 'CANA', c: 'Luogo del primo miracolo dell\'acqua in vino. (Giovanni 2:1)' },
+            { n: 20, d: 'H', x: 0, y: 6, w: 'ZOLFO', c: 'Sostanza infiammabile simbolo di distruzione. (Rivelazione 21:8)' },
+            { n: 23, d: 'H', x: 6, y: 6, w: 'CEFA', c: 'Nome aramaico dato a Simon Pietro. (Giovanni 1:42)' },
+            { n: 25, d: 'H', x: 0, y: 7, w: 'IZEBEL', c: 'Regina malvagia (1Re 22:23)' },
+            { n: 27, d: 'H', x: 7, y: 7, w: 'INNO', c: 'Canto di lode o ringraziamento rivolto a Dio. (Colossesi 3:16)' },
+            { n: 29, d: 'H', x: 2, y: 8, w: 'MA', c: 'Alternativa a se...' },
+            { n: 30, d: 'H', x: 5, y: 8, w: 'BASCAN', c: 'Regione dei tori. (Salmo 22:12)' },
+            { n: 31, d: 'H', x: 0, y: 9, w: 'NEMICO', c: 'Chi si oppone a Dio o al suo popolo. (Matteo 13:39)' },
+            { n: 34, d: 'H', x: 7, y: 9, w: 'SE', c: 'Alternativa a ma...' },
+            { n: 35, d: 'H', x: 0, y: 10, w: 'EFESO', c: 'Metropoli dell\'Asia Minore nota per il tempio di Artemide. (Atti 19:1)' },
+            { n: 36, d: 'H', x: 6, y: 10, w: 'BAAL', c: 'Dio cananeo della fertilita e dei cieli. (Giudici 2:13)' }
+        ]
     }
 ];
 
