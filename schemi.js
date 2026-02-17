@@ -121,5 +121,37 @@ const SCHEMI_BIBLICI = [
             { n: 34, d: 'H', x: 0, y: 10, w: 'EFESO', c: 'Metropoli dell\'Asia Minore nota per il tempio di Artemide. (Atti 19:1)' },
             { n: 35, d: 'H', x: 6, y: 10, w: 'BAAL', c: 'Dio cananeo della fertilita e dei cieli. (Giudici 2:13)' }
         ]
+    },
+    {
+        id: 5,
+        parole: [
+
+            { n: 1, d: 'H', x: 1, y: 0, w: 'ALFA', c: 'La prima lettera dell’alfabeto greco (Rivelazione 21:6)' },
+            { n: 1, d: 'V', x: 1, y: 0, w: 'ARCA', c: 'Uzza morì per averla toccata (2 Samuele 6:6, 7)' },
+            { n: 4, d: 'H', x: 6, y: 0, w: 'SPIE', c: 'Raab dimostrò la sua fede ospitandole (Ebrei 11:31)' },
+            { n: 5, d: 'V', x: 7, y: 0, w: 'PORPORA', c: 'Colore e tessuto pregiato simbolo di regalita. (Marco 15:17)' },
+            { n: 6, d: 'V', x: 9, y: 0, w: 'ELIU', c: 'Giovane che consiglio Giobbe e i suoi amici. (Giobbe 32:2)' },
+            { n: 7, d: 'H', x: 0, y: 1, w: 'UR', c: 'Citta dei caldei da cui parti Abraamo. (Genesi 11:31)' },
+            { n: 8, d: 'H', x: 3, y: 1, w: 'AGGEO', c: 'Profetizzò al tempo della ricostruzione del tempio (Esdra 6:14)' },
+            { n: 9, d: 'H', x: 9, y: 1, w: 'LU', c: 'Luca' },
+            { n: 10, d: 'H', x: 1, y: 2, w: 'CIRO', c: 'Re di Persia che libero gli ebrei da Babilonia. (Esdra 1:1)' },
+            { n: 11, d: 'H', x: 6, y: 2, w: 'ARMI', c: 'Quelle dei cristiani non sono carnali (2 Corinti 10:4)' },
+            { n: 12, d: 'V', x: 0, y: 3, w: 'FRATELLO', c: 'Membro della stessa famiglia o della congregazione. (Matteo 23:8)' },
+            { n: 13, d: 'V', x: 5, y: 3, w: 'EDOM', c: 'Regione montuosa a sud del Mar Morto. (Genesi 36:8)' },
+            { n: 15, d: 'V', x: 10, y: 3, w: 'OSCURITA', c: 'Assenza di luce, simbolo di ignoranza o male. (Isaia 60:2)' },
+            { n: 16, d: 'H', x: 2, y: 4, w: 'ABADDON', c: 'Termine ebraico che significa distruzione. (Rivelazione 9:11)' },
+            { n: 19, d: 'H', x: 0, y: 5, w: 'ADES', c: 'Soggiorno dei morti, corrispondente all\'ebraico Sceol. (Atti 2:31)' },
+            { n: 20, d: 'V', x: 1, y: 5, w: 'DARIO', c: 'Nome di diversi re medi e persiani. (Esdra 4:5)' },
+            { n: 21, d: 'H', x: 7, y: 5, w: 'RE', c: 'Sovrano che esercita l\'autorita su un popolo. (1 Samuele 8:5)' },
+            { n: 23, d: 'H', x: 3, y: 6, w: 'SEME', c: 'Discendenza o prole; riferito anche al Messia. (Genesi 3:15)' },
+            { n: 24, d: 'V', x: 4, y: 6, w: 'ELI', c: 'Sommo sacerdote e giudice che educo Samuele. (1 Samuele 1:9)' },
+            { n: 25, d: 'V', x: 6, y: 6, w: 'ETA', c: 'Periodo della vita o epoca storica specifica. (Glossario)' },
+            { n: 26, d: 'V', x: 9, y: 6, w: 'CANA', c: 'Luogo del primo miracolo dell\'acqua in vino. (Giovanni 2:1)' },
+            { n: 27, d: 'H', x: 0, y: 7, w: 'ERA', c: 'Arco temporale' },
+            { n: 30, d: 'H', x: 3, y: 8, w: 'DINA', c: 'Figlia di Giacobbe e Lia. (Genesi 30:21)' },
+            { n: 32, d: 'H', x: 0, y: 9, w: 'LOGO', c: 'Termine greco per parola o ragione; riferito a Gesu. (Giovanni 1:1)' },
+            { n: 34, d: 'H', x: 8, y: 9, w: 'GAT', c: 'Citta d\'origine del gigante Golia. (1 Samuele 17:4)' },
+            { n: 35, d: 'H', x: 2, y: 10, w: 'GRAVOSI', c: 'Pesanti, onerosi (1 Giovanni 5:3)' }
+        ]
     }
 ];
