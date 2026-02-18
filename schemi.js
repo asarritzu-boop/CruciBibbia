@@ -153,5 +153,42 @@ const SCHEMI_BIBLICI = [
             { n: 34, d: 'H', x: 8, y: 9, w: 'GAT', c: 'Citta d\'origine del gigante Golia. (1 Samuele 17:4)' },
             { n: 35, d: 'H', x: 2, y: 10, w: 'GRAVOSI', c: 'Pesanti, onerosi (1 Giovanni 5:3)' }
         ]
+    },
+        {
+            id: 6,
+        parole: [
+
+            { n: 1, d: 'H', x: 0, y: 0, w: 'SEME', c: 'Discendenza o prole; riferito anche al Messia. (Genesi 3:15)' },
+            { n: 1, d: 'V', x: 0, y: 0, w: 'SAUL', c: 'Il primo re di Israele (Atti 13:21)' },
+            { n: 3, d: 'V', x: 3, y: 0, w: 'ERBE', c: 'Quelle amare si mangiavano durante la Pasqua (Numeri 9:11)' },
+            { n: 4, d: 'H', x: 5, y: 0, w: 'TRIBU', c: 'Ciascuna delle dodici divisioni del popolo d\'Israele. (Genesi 49:28)' },
+            { n: 4, d: 'V', x: 5, y: 0, w: 'TINI', c: 'Quando traboccano, c’è abbondanza (Proverbi 3:10)' },
+            { n: 5, d: 'V', x: 7, y: 0, w: 'IAH', c: 'Forma poetica del nome “Geova” (Esodo 15:1, 2)' },
+            { n: 6, d: 'V', x: 9, y: 0, w: 'UNTO', c: 'Scelto e incaricato tramite l\'unzione spirituale. (2 Corinti 1:21)' },
+            { n: 7, d: 'H', x: 2, y: 1, w: 'ARMI', c: 'Quelle dei cristiani non sono carnali (2 Corinti 10:4)' },
+            { n: 9, d: 'V', x: 10, y: 1, w: 'RE', c: 'Sovrano che esercita l\'autorita su un popolo. (1 Samuele 8:5)' },
+            { n: 11, d: 'V', x: 1, y: 2, w: 'FUMO', c: 'Dà fastidio agli occhi (Proverbi 10:26)' },
+            { n: 13, d: 'V', x: 6, y: 2, w: 'CORA', c: 'Levita che guido la ribellione contro Mose. (Numeri 16:1)' },
+            { n: 14, d: 'V', x: 8, y: 2, w: 'ENOC', c: 'Uomo fedele che cammino con il vero Dio. (Genesi 5:22)' },
+            { n: 15, d: 'H', x: 0, y: 3, w: 'LUCE', c: 'Simbolo di verita, santita e guida divina. (Salmo 119:105)' },
+            { n: 16, d: 'V', x: 2, y: 3, w: 'COMPAGNO', c: 'Lo era di prigionia per Paolo (Colossesi 4:10)' },
+            { n: 20, d: 'V', x: 4, y: 4, w: 'HIN', c: 'Misura di capacità per liquidi (Esodo 29:40)' },
+            { n: 21, d: 'H', x: 6, y: 4, w: 'REO', c: 'Colpevole (Marco 14:64)' },
+            { n: 22, d: 'V', x: 10, y: 4, w: 'API', c: 'Producono il miele (Giudici 14:8)' },
+            { n: 23, d: 'H', x: 0, y: 5, w: 'SOMMITA', c: 'La parte più alta (2 Samuele 14:25)' },
+            { n: 23, d: 'V', x: 0, y: 5, w: 'SINAR', c: 'Il paese in cui sorse la torre di Babele (Genesi 11:2-4)' },
+            { n: 25, d: 'V', x: 5, y: 5, w: 'TABOR', c: 'Monte della Galilea dove Barac raduno l\'esercito. (Giudici 4:6)' },
+            { n: 27, d: 'V', x: 9, y: 5, w: 'GEENA', c: 'Simbolo di distruzione eterna, dalla valle di Innom. (Matteo 5:22)' },
+            { n: 28, d: 'H', x: 2, y: 6, w: 'PENA', c: 'Dolore, sofferenza (Romani 9:2)' },
+            { n: 29, d: 'V', x: 7, y: 6, w: 'LEA', c: 'Moglie di Giacobbe e madre di sei delle dodici tribu. (Genesi 29:23)' },
+            { n: 31, d: 'H', x: 0, y: 7, w: 'NAAS', c: 'Re ammonita che voleva cavare un occhio a tutti gli abitanti di Iabes di Galaad (1 Samuele 11:1, 2)' },
+            { n: 32, d: 'H', x: 5, y: 7, w: 'BREVE', c: 'Lo è il periodo di tempo che ha a disposizione Satana (Rivelazione 12:12)' },
+            { n: 33, d: 'H', x: 2, y: 8, w: 'GAIO', c: 'Il destinatario della terza lettera di Giovanni (3 Giovanni 1)' },
+            { n: 36, d: 'V', x: 10, y: 8, w: 'NOE', c: 'Costruttore dell\'arca e sopravvissuto al Diluvio. (Genesi 6:8)' },
+            { n: 37, d: 'H', x: 0, y: 9, w: 'RANCORE', c: 'Non bisogna nutrirlo (Levitico 19:18)' },
+            { n: 38, d: 'V', x: 1, y: 9, w: 'AI', c: 'Citta conquistata da Giosue dopo una sconfitta. (Giosue 7:2)' },
+            { n: 41, d: 'H', x: 1, y: 10, w: 'IO', c: 'me' },
+            { n: 42, d: 'H', x: 6, y: 10, w: 'VIA', c: 'Termine usato per indicare il modo di vivere cristiano. (Atti 9:2)' }
+        ]
     }
 ];
