@@ -191,36 +191,35 @@ const SCHEMI_BIBLICI = [
             { n: 42, d: 'H', x: 6, y: 10, w: 'VIA', c: 'Termine usato per indicare il modo di vivere cristiano. (Atti 9:2)' }
           ]
     },
-        {
-            id: 7,
-        parole: [
-
+    {
+        id:7,
+        parole:[
  {n:1,d:'H',x:2,y:0,w:'ELETTRO',c:'Lega lucente composta di oro e argento (Ezechiele 1:27)'},
- {n:3,d:'V',x:4,y:0,w:'ELIU',c:'Giovane che consiglio Giobbe e i suoi amici.'},
- {n:4,d:'V',x:6,y:0,w:'TANE',c:'Le “case” degli animali (Giobbe 37:8)'},
- {n:7,d:'H',x:1,y:1,w:'BAAL',c:'Dio cananeo della fertilita e dei cieli.'},
- {n:7,d:'V',x:1,y:1,w:'BILA',c:'Serva di Rachele e madre di Dan e Neftali.'},
- {n:8,d:'H',x:6,y:1,w:'ADES',c:'Soggiorno dei morti, corrispondente all\'ebraico Sceol.'},
- {n:9,d:'V',x:9,y:1,w:'SUSA',c:'Capitale dell\'impero persiano ai tempi di Ester.'},
+ {n:3,d:'V',x:4,y:0,w:'ELIU',c:'Giovane che consiglio Giobbe e i suoi amici. (Giobbe 32:2)'},
+ {n:4,d:'V',x:6,y:0,w:'TANE',c:'Le â€œcaseâ€ degli animali (Giobbe 37:8)'},
+ {n:7,d:'H',x:1,y:1,w:'BAAL',c:'Dio cananeo della fertilita e dei cieli. (Giudici 2:13)'},
+ {n:7,d:'V',x:1,y:1,w:'BILA',c:'Serva di Rachele e madre di Dan e Neftali. (Genesi 29:29)'},
+ {n:8,d:'H',x:6,y:1,w:'ADES',c:'Soggiorno dei morti, corrispondente all\'ebraico Sceol. (Atti 2:31)'},
+ {n:9,d:'V',x:9,y:1,w:'SUSA',c:'Capitale dell\'impero persiano ai tempi di Ester. (Ester 2:8)'},
  {n:10,d:'V',x:0,y:2,w:'VENDERE',c:'Era proibito farlo di sabato (Neemia 10:31)'},
  {n:12,d:'V',x:10,y:2,w:'VERGINI',c:'In una parabola cinque erano stolte e cinque no (Matteo 25:1, 2)'},
- {n:14,d:'H',x:3,y:3,w:'RUBEN',c:'Il figlio di Giacobbe che violò la concubina del padre (Genesi 35:22)'},
- {n:14,d:'V',x:3,y:3,w:'RICCO',c:'Ha molti “amici” (Proverbi 14:20)'},
- {n:15,d:'V',x:5,y:3,w:'BARUC',c:'Segretario e amico del profeta Geremia.'},
+ {n:14,d:'H',x:3,y:3,w:'RUBEN',c:'Il figlio di Giacobbe che violÃ² la concubina del padre (Genesi 35:22)'},
+ {n:14,d:'V',x:3,y:3,w:'RICCO',c:'Ha molti â€œamiciâ€ (Proverbi 14:20)'},
+ {n:15,d:'V',x:5,y:3,w:'BARUC',c:'Segretario e amico del profeta Geremia. (Geremia 32:12)'},
  {n:16,d:'V',x:7,y:3,w:'NAOMI',c:'Suocera di Rut (Rut 1:3, 4)'},
  {n:18,d:'H',x:0,y:4,w:'NAVI',c:'Quelle di Tarsis erano famose (1 Re 10:22)'},
- {n:19,d:'H',x:7,y:4,w:'AGAR',c:'Serva di Sara e madre di Ismaele.'},
+ {n:19,d:'H',x:7,y:4,w:'AGAR',c:'Serva di Sara e madre di Ismaele. (Genesi 16:1)'},
  {n:20,d:'H',x:3,y:5,w:'CERVO',c:'Quadrupede agilissimo (Isaia 35:6)'},
- {n:21,d:'H',x:0,y:6,w:'ENOC',c:'Uomo fedele che cammino con il vero Dio.'},
- {n:22,d:'V',x:1,y:6,w:'NAIN',c:'Città in cui Gesù risuscitò il figlio di una vedova (Luca 7:11, 12)'},
+ {n:21,d:'H',x:0,y:6,w:'ENOC',c:'Uomo fedele che cammino con il vero Dio. (Genesi 5:22)'},
+ {n:22,d:'V',x:1,y:6,w:'NAIN',c:'CittÃ  in cui GesÃ¹ risuscitÃ² il figlio di una vedova (Luca 7:11, 12)'},
  {n:23,d:'H',x:7,y:6,w:'MARI',c:'Comparvero nel terzo giorno creativo (Genesi 1:10)'},
- {n:24,d:'V',x:9,y:6,w:'ROMA',c:'Capitale dell\'impero e sesta potenza mondiale.'},
+ {n:24,d:'V',x:9,y:6,w:'ROMA',c:'Capitale dell\'impero e sesta potenza mondiale. (Atti 18:2)'},
  {n:26,d:'H',x:3,y:7,w:'OCCHI',c:'Si alzano senza fatica (Matteo 17:8)'},
  {n:27,d:'V',x:4,y:7,w:'CASA',c:'Ha sempre un costruttore (Ebrei 3:4)'},
  {n:28,d:'V',x:6,y:7,w:'HIEL',c:'Perse due figli per avere riedificato Gerico (1 Re 16:34)'},
- {n:32,d:'H',x:1,y:9,w:'NAAS',c:'Voleva cavare un occhio a tutti gli abitanti di una città (1 Samuele 11:1, 2)'},
+ {n:32,d:'H',x:1,y:9,w:'NAAS',c:'Voleva cavare un occhio a tutti gli abitanti di una cittÃ  (1 Samuele 11:1, 2)'},
  {n:35,d:'H',x:6,y:9,w:'ESCA',c:'Si tende a una vittima ignara (Isaia 29:21)'},
  {n:38,d:'H',x:2,y:10,w:'SBAGLIO',c:'Si fa senza volere (Levitico 5:18)'}
 ]
-}
+    }
 ];
