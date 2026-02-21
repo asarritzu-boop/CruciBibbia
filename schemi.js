@@ -221,5 +221,34 @@ const SCHEMI_BIBLICI = [
  {n:35,d:'H',x:6,y:9,w:'ESCA',c:'Si tende a una vittima ignara (Isaia 29:21)'},
  {n:38,d:'H',x:2,y:10,w:'SBAGLIO',c:'Si fa senza volere (Levitico 5:18)'}
 ]
-    }
+    },
+    {
+        id:8,
+        parole:[
+ {n:1,d:'H',x:1,y:0,w:'ARTASERSE',c:'Re persiano che autorizzo la ricostruzione delle mura. (Neemia 2:1)'},
+ {n:1,d:'V',x:1,y:0,w:'APRE',c:'“Geova ---- gli occhi dei ciechi” (Salmo 146:8)'},
+ {n:3,d:'V',x:3,y:0,w:'TRIANGOLARE',c:'Un’arpa poteva avere anche questa forma (Daniele 3:5)'},
+ {n:6,d:'V',x:7,y:0,w:'RINGRAZIARE',c:'Esprimere riconoscenza (2 Tessalonicesi 2:13)'},
+ {n:9,d:'H',x:0,y:1,w:'SPARI',c:'Quando Gesù toccò un lebbroso “immediatamente la lebbra ----- da lui” (Luca 5:13)'},
+ {n:9,d:'V',x:0,y:1,w:'SETTEMILA',c:'Il numero degli israeliti che non avevano adorato Baal al tempo di Elia (1 Re 19:18)'},
+ {n:10,d:'H',x:6,y:1,w:'MIELE',c:'È notoriamente dolce (Giudici 14:18)'},
+ {n:11,d:'V',x:10,y:1,w:'ELUL',c:'Nome post-esilico del sesto mese del calendario sacro. (Neemia 6:15)'},
+ {n:13,d:'H',x:3,y:2,w:'IABIN',c:'Il re cananeo il cui esercito fu sconfitto da Barac (Giudici 4:2-16)'},
+ {n:14,d:'V',x:5,y:2,w:'BALSAMO',c:'Olio aromatico curativo estratto da piante. (Geremia 8:22)'},
+ {n:15,d:'H',x:9,y:2,w:'EL',c:'Termine ebraico per \'Dio\' o \'Potente\'. (Genesi 33:20)'},
+ {n:16,d:'H',x:0,y:3,w:'TERA',c:'Padre di Abramo (Genesi 11:31)'},
+ {n:17,d:'V',x:2,y:3,w:'RAUCA',c:'Lo diventa la voce a furia di urlare (Salmo 69:3)'},
+ {n:18,d:'H',x:7,y:3,w:'GESU',c:'Nome del Figlio di Dio, il Messia promesso. (Matteo 1:21)'},
+ {n:20,d:'H',x:2,y:4,w:'ANELARE',c:'Bramare, desiderare ardentemente (Gioele 1:20)'},
+ {n:22,d:'H',x:7,y:5,w:'ASA',c:'Re di Giuda noto per la sua lotta all\'idolatria. (1 Re 15:9)'},
+ {n:23,d:'H',x:2,y:6,w:'CORAZZE',c:'Quelle degli “eserciti di cavalleria” di Rivelazione 9:16, 17 erano rosse, blu e gialle'},
+ {n:24,d:'V',x:10,y:6,w:'ELA',c:'Quarto re d\'Israele, figlio di Baasa, ucciso mentre era ubriaco. (1 Re 16:8-10)'},
+ {n:26,d:'H',x:7,y:7,w:'IAEL',c:'Moglie di Heber che uccise Sisera con un piolo. (Giudici 4:17)'},
+ {n:30,d:'H',x:3,y:8,w:'AMONA',c:'Dio egiziano menzionato dal profeta Geremia. (Geremia 46:25)'},
+ {n:33,d:'H',x:9,y:8,w:'IA',c:'Forma abbreviata del nome divino (Jah/Yah). (Salmo 68:4)'},
+ {n:34,d:'H',x:0,y:9,w:'AMORE',c:'Dio lo è (1 Giovanni 4:8)'},
+ {n:36,d:'H',x:6,y:9,w:'URIM',c:'Oggetti usati dal sommo sacerdote per consultare Dio. (Esodo 28:30)'},
+ {n:38,d:'H',x:1,y:10,w:'PREGHIERA',c:'Comunicazione rivolta a Dio con fede. (Filippesi 4:6)'}
+]
+     }
 ];
